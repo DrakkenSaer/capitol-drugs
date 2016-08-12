@@ -1,0 +1,257 @@
+@import "compass";
+
+/* ==================== SASS Mixins =================== */
+
+@mixin triangle($size, $color, $direction) {
+    height: 0;
+    width: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: $size / 2;
+
+    @if $direction == up {
+      border-bottom-color: $color;
+    } @else if $direction == right {
+      border-left-color:   $color;
+
+    } @else if $direction == down {
+      border-top-color:    $color;
+
+    } @else if $direction == left {
+      border-right-color:  $color;
+    }
+}
+
+
+@mixin bordered-triangle($size, $border-width, $color, $border-color, $direction, $alt: false) { 
+  $back-size: $size + ($border-width * 2);
+  position: relative;
+  
+  min-width: $size;
+  min-height: $size;
+  
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  &:after {
+     @include triangle($size, $color, $direction);
+  }
+  
+  &:before {
+    @include triangle($back-size, $border-color, $direction);
+    $mid-border-width: ($border-width / 2);
+    $border-width-and-mid: $border-width + $mid-border-width; 
+    
+    @if ($alt == true) {
+      $mid-border-width: 0;
+      $border-width-and-mid: $border-width * 2;
+    }
+    
+    @if ($direction == up) or ($direction == down) {
+      margin-left: - $border-width;
+      
+      @if ($direction == down) {
+        margin-top: -$mid-border-width;
+      } @else {
+        margin-top: - $border-width-and-mid;
+      }  
+    
+    } @else if ($direction == right) or ($direction == left) {
+      margin-top: - $border-width;
+      
+      @if ($direction == right) {
+        margin-left: - $mid-border-width;
+      } @else {
+        margin-left: - $border-width-and-mid;
+      }
+    }
+  }
+  
+}
+
+
+/* Textual CSS */
+
+.text-decoration-none, .text-decoration-none * { text-decoration: none !important; }
+
+.font-size-230 {
+	font-size: 230%;
+}
+.font-size-200 {
+	font-size: 200%;
+}
+.font-size-190 {
+	font-size: 190%;
+}
+.font-size-180 {
+	font-size: 180%;
+}
+.font-size-120 {
+	font-size: 120%;
+}
+.font-size-80 {
+	font-size: 80%;
+}
+.font-size-70 {
+	font-size: 70%;
+}
+.font-size-60 {
+	font-size: 60%;
+}
+
+
+
+/* Contextual CSS */
+
+.cursor-pointer { cursor: pointer; }
+.no-border-top { border-top: none; }
+.no-border-bottom { border-bottom: none; }
+.no-border-right { border-right: none; }
+.no-border-left { border-left: none; }
+.no-border { border: none !important; }
+.border-radius-10 { @include border-radius(10px); }
+.border-radius-5 { @include border-radius(5px); }
+.border-radius-2 { @include border-radius(2px); }
+.no-border-radius { @include border-radius(0px); }
+.no-background { background: none; }
+
+.border-shadow-inner-top { @include box-shadow(inset 0 7px 9px -7px rgba(0,0,0,0.4)); }
+
+.scroll-vertically { overflow-y: scroll; }
+
+
+/* Positional CSS */
+
+.width-100 {
+	min-width: 100%;
+}
+
+.height-100 {
+	min-height: 100vh;
+}
+
+.buffer-padding-large {
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
+}
+.buffer-padding-large-horizontal {
+	padding-left: 2.5em;
+	padding-right: 2.5em;
+}
+.buffer-padding-medium {
+	padding-top: 1.75em;
+	padding-bottom: 1.75em;
+}
+.buffer-padding-medium-horizontal {
+	padding-left: 1.75em;
+	padding-right: 1.75em;
+}
+.buffer-padding-small {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+.buffer-padding-small-horizontal {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.buffer-padding-extra-small {
+	padding-top: 0.75em;
+	padding-bottom: 0.75em;
+}
+.buffer-padding-extra-small-horizontal {
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+}
+.buffer-padding-tiny {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+.buffer-padding-tiny-horizontal {
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+
+.buffer-margin-extra-large {
+	margin-top: 5em;
+	margin-bottom: 5em;
+}
+.buffer-margin-large {
+	margin-top: 2.5em;
+	margin-bottom: 2.5em;
+}
+.buffer-margin-large-horizontal {
+	margin-left: 2.5em;
+	margin-right: 2.5em;
+}
+.buffer-margin-medium {
+	margin-top: 1.75em;
+	margin-bottom: 1.75em;
+}
+.buffer-margin-medium-horizontal {
+	margin-left: 1.75em;
+	margin-right: 1.75em;
+}
+.buffer-margin-small {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.buffer-margin-small-horizontal {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+.buffer-margin-extra-small {
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
+}
+.buffer-margin-extra-small-horizontal {
+	margin-left: 0.75em;
+	margin-right: 0.75em;
+}
+.buffer-margin-tiny {
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+}
+.buffer-margin-tiny-horizontal {
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}
+
+.no-padding { padding: 0 !important; }
+.no-padding-left { padding-left: 0; }
+.no-padding-right { padding-right: 0; }
+.no-padding-top { padding-top: 0; }
+.no-padding-bottom { padding-bottom: 0; }
+.no-margin { margin: 0; }
+.no-margin-top { margin-top: 0; }
+.no-margin-bottom { margin-bottom: 0; }
+.no-margin-right { margin-right: 0; }
+.no-margin-left { margin-left: 0; }
+
+.display-inline-block { display: inline-block; }
+
+
+/* List CSS */
+
+.list-style-dashed {
+	list-style-type: none;
+	
+	&> li:before {
+		content: "-";
+		margin: 0 5px 0 -20px;
+	}
+}
+
+.list-circle-o {    
+	list-style-type: none;
+	
+	&> li:before {
+		font-family: 'FontAwesome';
+		content: '\f10c';
+		margin: 0 5px 0 -20px;
+	}
+}

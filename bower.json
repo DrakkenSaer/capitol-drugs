@@ -1,0 +1,20 @@
+{
+  "name": "Payfolio",
+  "homepage": "https://github.com/DrakkenSaer/Payfolio",
+  "authors": [
+    "Drakken Saer <shadowdrakkeen@gmail.com>"
+  ],
+  "description": "Payfolio Bower components",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-datepicker": "latest"
+  }
+}
