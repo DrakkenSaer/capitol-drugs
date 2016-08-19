@@ -1,0 +1,53 @@
+@import "color-scheme";
+@import "../global-helpers";
+
+
+// migrate when you can
+.btn-purple { @include button-variant(white, $purple, $light-purple); }
+.btn-blue { @include button-variant(white, $blue, $light-blue); }
+
+
+
+/* ===================== Universal ===================== */
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
+
+/* Form CSS */
+
+textarea { resize: vertical; }
+
+/* layout CSS */
+
+html, body{
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+}
+
+/* Header */
+
+#link-to-cart {
+  a {
+    @include text-vertical-align-middle(60px);
+
+    @extend .col-xs-12; 
+    @extend .btn;
+    @extend .btn-blue;
+    @extend .no-border-radius;
+    @extend .no-padding;
+    @extend .font-weight-bold;
+  }
+}
+
+#logo-text {
+  @include text-vertical-align-middle(60px);
+}

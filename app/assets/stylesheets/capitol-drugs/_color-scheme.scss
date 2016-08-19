@@ -1,0 +1,86 @@
+@import 'compass';
+
+/* ===================== SASS Mixins ===================== */
+
+$purple: #7360A1;
+$dark-purple: #493869;
+$darker-purple: #2A213A;
+$light-purple: #A199CB;
+$lighter-purple: #DED7EB;
+
+$blue: #7080BE;
+$dark-blue: #3D4878;
+$darker-blue: #142B49;
+$light-blue: #A6C4E2;
+$lighter-blue: #DCE7EE;
+
+
+/* ===================== Textual Color ===================== */
+
+.text-white, .text-white *  { color: white !important; }
+
+.text-purple, .text-purple *  { color: $purple !important; @include input-placeholder { color: $purple !important }; }
+.text-light-purple, .text-light-purple *  { color: $light-purple !important; @include input-placeholder { color: $light-purple !important }; }
+.text-lighter-purple, .text-lighter-purple *  { color: $lighter-purple !important; @include input-placeholder { color: $lighter-purple !important }; }
+.text-dark-purple, .text-dark-purple *  { color: $dark-purple !important; @include input-placeholder { color: $dark-purple !important }; }
+.text-darker-purple, .text-darker-purple *  { color: $darker-purple !important; @include input-placeholder { color: $darker-purple !important }; }
+
+.text-blue, .text-blue *  { color: $blue !important; @include input-placeholder { color: $blue !important; }; }
+.text-light-blue, .text-light-blue *  { color: $light-blue !important; @include input-placeholder { color: $light-blue !important; }; }
+.text-lighter-blue, .text-lighter-blue *  { color: $lighter-blue !important; @include input-placeholder { color: $lighter-blue !important; }; }
+.text-dark-blue, .text-dark-blue *  { color: $dark-blue !important; @include input-placeholder { color: $dark-blue !important; }; }
+.text-darker-blue, .text-darker-blue *  { color: $darker-blue !important; @include input-placeholder { color: $darker-blue !important }; }
+
+
+/* ===================== Background Colors ===================== */
+
+.background-purple { background-color: $purple !important; }
+.background-dark-purple { background-color: $dark-purple !important; }
+.background-darker-purple { background-color: $darker-purple !important; }
+.background-light-purple { background-color: $light-purple !important; }
+.background-lighter-purple { background-color: $lighter-purple !important; }
+
+.background-blue { background-color: $blue !important; }
+.background-dark-blue { background-color: $dark-blue !important; }
+.background-darker-blue { background-color: $darker-blue !important; }
+.background-light-blue { background-color: $light-blue !important; }
+.background-lighter-blue { background-color: $lighter-blue !important; }
+
+.background-purple-opacity-40 { background-color: rgba($purple, 0.4) !important; }
+.background-dark-purple-opacity-40 { background-color: rgba($dark-purple, 0.4) !important; }
+.background-darker-purple-opacity-40 { background-color: rgba($darker-purple, 0.4) !important; }
+.background-light-purple-opacity-40 { background-color: rgba($light-purple, 0.4) !important; }
+.background-lighter-purple-opacity-40 { background-color: rgba($lighter-purple, 0.4) !important; }
+
+.background-blue-opacity-40 { background-color: rgba($blue, 0.4) !important; }
+.background-dark-blue-opacity-40 { background-color: rgba($dark-blue, 0.4) !important; }
+.background-darker-blue-opacity-40 { background-color: rgba($darker-blue, 0.4) !important; }
+.background-light-blue-opacity-40 { background-color: rgba($light-blue, 0.4) !important; }
+.background-lighter-blue-opacity-40 { background-color: rgba($lighter-blue, 0.4) !important; }
+
+
+/* ===================== Border Colors ===================== */
+
+.border-right-white-1 { border-right: solid 1px white; }
+
+.border-purple-1 { border: solid 1px $purple !important; }
+.border-light-purple-1 { border: solid 1px $light-purple !important; }
+.border-lighter-purple-1 { border: solid 1px $lighter-purple !important; }
+.border-right-lighter-purple-1 { border-right: solid 1px $lighter-purple !important; }
+.border-dark-purple-1 { border: solid 1px $dark-purple !important; }
+.border-darker-purple-1 { border: solid 1px $darker-purple !important; }
+
+.border-blue-1 { border: solid 1px $blue !important; }
+.border-light-blue-1 { border: solid 1px $light-blue !important; }
+.border-lighter-blue-1 { border: solid 1px $lighter-blue !important; }
+.border-dark-blue-1 { border: solid 1px $dark-blue !important; }
+.border-darker-blue-1 { border: solid 1px $darker-blue !important; }
+
+
+/* ================ Button Colors ================ */
+
+
+
+/* ================ Bootstrap Overrides ================ */
+
+
