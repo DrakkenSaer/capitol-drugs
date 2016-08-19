@@ -1,18 +1,16 @@
-<nav class="navbar" id="top-nav-bar">
-  <div class="col-md-4 col-xs-12">
-    <div class="background-blue border-light-blue-1 text-center" style="height: 60px;">
-      <figure id="logo" class="col-md-7 col-xs-5 no-margin border-right-lighter-purple-1" data-hook>
-        <%= logo %>
-      </figure>
-      <div class="col-md-5 col-xs-7 text-uppercase text-bold">
-        Online Store
-      </div>
+<nav class="navbar col-xs-12" id="top-nav-bar">
+  <div class="col-md-4 col-xs-12 no-padding background-blue border-light-blue-1 text-center text-vertical-center-height-60">
+    <figure id="logo" class="col-md-7 col-xs-5 no-margin" data-hook>
+      <%= logo %>
+    </figure>
+    <div class="col-md-5 col-xs-7 text-uppercase text-bold">
+      Online Store
     </div>
   </div>
-  <div class="col-md-6 col-sm-8 col-xs-12">
+  <div class="col-md-6 col-sm-8 col-xs-12 no-padding">
     <%= render partial: 'spree/shared/capitol-drugs/search' %>
   </div>
-  <div class="col-md-2 col-sm-4 col-xs-12">
+  <div class="col-md-2 col-sm-4 col-xs-12 no-padding">
     <div id="link-to-cart" data-hook>
       <noscript>
         <%= link_to Spree.t(:cart), '/cart' %>
