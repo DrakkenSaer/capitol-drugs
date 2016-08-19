@@ -106,8 +106,8 @@
 
 .font-size-25px { font-size: 25px; }
 
-.font-weight-bold { font-weight: bold; }
-
+.text-bold { font-weight: bold; }
+.text-italic { font-style: italic; }
 
 /* Contextual CSS */
 
@@ -139,11 +139,10 @@
 	min-height: 100vh;
 }
 
-.font-size-18 { font-size: 28px; }
-
+.buffer-padding-100 { padding-top: 100px; padding-bottom: 100px; }
 .buffer-padding-70-horizontal { padding-left: 70px; padding-right: 70px; }
 .buffer-padding-60-horizontal { padding-left: 60px; padding-right: 60px; }
-.buffer-padding-60 { padding-top: 70px; padding-bottom: 70px; }
+.buffer-padding-70 { padding-top: 70px; padding-bottom: 70px; }
 .buffer-padding-60 { padding-top: 60px; padding-bottom: 60px; }
 .buffer-padding-50 { padding-top: 50px; padding-bottom: 50px; }
 .buffer-padding-50-horizontal { padding-left: 50px; padding-right: 50px; }
@@ -160,6 +159,8 @@
 .buffer-margin-70 { margin-top: 70px; margin-bottom: 70px; }
 .buffer-margin-60 { margin-top: 60px; margin-bottom: 60px; }
 .buffer-margin-50 { margin-top: 50px; margin-bottom: 50px; }
+.buffer-margin-40 { margin-top: 40px; margin-bottom: 40px; }
+.buffer-margin-30 { margin-top: 30px; margin-bottom: 30px; }
 .buffer-margin-25 { margin-top: 25px; margin-bottom: 25px; }
 .buffer-margin-20 { margin-top: 20px; margin-bottom: 20px; }
 .buffer-margin-15 { margin-top: 15px; margin-bottom: 15px; }
