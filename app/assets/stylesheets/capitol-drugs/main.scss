@@ -3,14 +3,14 @@
 
 
 // migrate when you can
-.btn-purple { @include button-variant(white, $purple, $light-purple); }
-.btn-blue { @include button-variant(white, $blue, $light-blue); }
+.btn-purple { @include button-variant(none, $purple, $light-purple); }
+.btn-blue { @include button-variant(none, $blue, $light-blue); }
 
 
 
 /* ===================== Universal ===================== */
 
-/* miscellaneous */
+/* Miscellaneous */
 
 .debug_dump {
   clear: both;
@@ -19,11 +19,28 @@
   margin-top: 45px;
 }
 
+
+/* Font CSS */
+
+.fjalla-one { font-family: 'Fjalla One', sans-serif; }
+.text-uppercase, .text-uppercase * { @extend .fjalla-one; }
+
+
+/* Link CSS */
+
+a { 
+  transition: all 0.2s linear;
+
+  @extend .text-decoration-none;
+}
+
+
 /* Form CSS */
 
 textarea { resize: vertical; }
 
-/* layout CSS */
+
+/* Layout CSS */
 
 html, body{
   height: 100%;
@@ -31,7 +48,9 @@ html, body{
 
 body {
   font-size: 16px;
+  * { font-family: 'Tinos', serif; }
 }
+
 
 /* Header */
 
@@ -39,13 +58,16 @@ body {
   a {
     @include text-vertical-align-middle(60px);
 
-    @extend .col-xs-12; 
+    @extend .col-xs-12;
     @extend .btn;
     @extend .btn-blue;
     @extend .no-border-radius;
     @extend .no-padding;
-    @extend .text-bold;
   }
+}
+
+a.btn-blue {
+    @extend .btn-blue;
 }
 
 #logo-text {

@@ -19,17 +19,19 @@ $lighter-blue: #DCE7EE;
 
 .text-white, .text-white *  { color: white !important; }
 
-.text-purple, .text-purple *  { color: $purple !important; @include input-placeholder { color: $purple !important }; }
-.text-light-purple, .text-light-purple *  { color: $light-purple !important; @include input-placeholder { color: $light-purple !important }; }
-.text-lighter-purple, .text-lighter-purple *  { color: $lighter-purple !important; @include input-placeholder { color: $lighter-purple !important }; }
-.text-dark-purple, .text-dark-purple *  { color: $dark-purple !important; @include input-placeholder { color: $dark-purple !important }; }
-.text-darker-purple, .text-darker-purple *  { color: $darker-purple !important; @include input-placeholder { color: $darker-purple !important }; }
+.text-purple, .text-purple *  { color: $purple; @include input-placeholder { color: $purple !important }; }
+.text-light-purple, .text-light-purple *  { color: $light-purple; @include input-placeholder { color: $light-purple !important }; }
+.text-light-purple-important, .text-light-purple-important *  { color: $light-purple !important; @include input-placeholder { color: $light-purple !important }; }
+.text-lighter-purple, .text-lighter-purple *  { color: $lighter-purple; @include input-placeholder { color: $lighter-purple !important }; }
+.text-lighter-purple-important, .text-lighter-purple-important *  { color: $lighter-purple !important; @include input-placeholder { color: $lighter-purple !important }; }
+.text-dark-purple, .text-dark-purple *  { color: $dark-purple; @include input-placeholder { color: $dark-purple !important }; }
+.text-darker-purple, .text-darker-purple *  { color: $darker-purple; @include input-placeholder { color: $darker-purple !important }; }
 
-.text-blue, .text-blue *  { color: $blue !important; @include input-placeholder { color: $blue !important; }; }
-.text-light-blue, .text-light-blue *  { color: $light-blue !important; @include input-placeholder { color: $light-blue !important; }; }
-.text-lighter-blue, .text-lighter-blue *  { color: $lighter-blue !important; @include input-placeholder { color: $lighter-blue !important; }; }
-.text-dark-blue, .text-dark-blue *  { color: $dark-blue !important; @include input-placeholder { color: $dark-blue !important; }; }
-.text-darker-blue, .text-darker-blue *  { color: $darker-blue !important; @include input-placeholder { color: $darker-blue !important }; }
+.text-blue, .text-blue *  { color: $blue; @include input-placeholder { color: $blue !important; }; }
+.text-light-blue, .text-light-blue *  { color: $light-blue; @include input-placeholder { color: $light-blue !important; }; }
+.text-lighter-blue, .text-lighter-blue *  { color: $lighter-blue; @include input-placeholder { color: $lighter-blue !important; }; }
+.text-dark-blue, .text-dark-blue *  { color: $dark-blue; @include input-placeholder { color: $dark-blue !important; }; }
+.text-darker-blue, .text-darker-blue *  { color: $darker-blue; @include input-placeholder { color: $darker-blue !important }; }
 
 
 /* ===================== Background Colors ===================== */
