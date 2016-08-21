@@ -36,6 +36,11 @@ $lighter-blue: #DCE7EE;
 
 /* ===================== Background Colors ===================== */
 
+.background-dark-blue-gradient {
+    @include filter-gradient(#3d4878, #7981a2, vertical);
+    @include background-image(linear-gradient(top, $blue 0%, rgba(121,129,162,0) 40%, rgba(255,255,255,0) 100%));
+}
+
 .background-purple { background-color: $purple !important; }
 .background-dark-purple { background-color: $dark-purple !important; }
 .background-darker-purple { background-color: $darker-purple !important; }
