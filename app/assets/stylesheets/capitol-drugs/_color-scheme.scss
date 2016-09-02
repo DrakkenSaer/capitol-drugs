@@ -15,6 +15,7 @@ $light-blue: #A6C4E2;
 $lighter-blue: #DCE7EE;
 
 
+
 /* ===================== Textual Color ===================== */
 
 .text-white, .text-white *  { color: white !important; }
@@ -34,6 +35,9 @@ $lighter-blue: #DCE7EE;
 .text-darker-blue, .text-darker-blue *  { color: $darker-blue; @include input-placeholder { color: $darker-blue !important }; }
 
 
+.input-text-light-blue input, select, textarea { color: light-blue !important; }
+.input-text-light-blue textarea:focus, input:focus { color: light-blue !important; }
+ 
 /* ===================== Background Colors ===================== */
 
 .background-dark-blue-gradient {
@@ -65,6 +69,7 @@ $lighter-blue: #DCE7EE;
 .background-light-blue-opacity-40 { background-color: rgba($light-blue, 0.4) !important; }
 .background-lighter-blue-opacity-40 { background-color: rgba($lighter-blue, 0.4) !important; }
 
+.background-white { background-color: white !important; }
 
 /* ===================== Border Colors ===================== */
 
@@ -130,10 +135,11 @@ $lighter-blue: #DCE7EE;
 .border-right-darker-blue-1 { border-right: solid 1px $darker-blue !important; }
 .border-left-darker-blue-1 { border-left: solid 1px $darker-blue !important; }
 
+.border-none { border: 0 !important; }
 
 /* ================ Button Colors ================ */
 
-
+.btn-light-blue { background-color: $light-blue; }
 
 /* ================ Bootstrap Overrides ================ */
 

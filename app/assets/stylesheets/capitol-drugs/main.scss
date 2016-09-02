@@ -24,7 +24,8 @@
 
 .fjalla-one { font-family: 'Fjalla One', sans-serif; }
 .text-uppercase, .text-uppercase * { @extend .fjalla-one; }
-
+.times-new-roman { font-family: TimesNewRoman, 'Times New Roman', Times, serif; }
+.times-new-bold { font-family: TimesNewRoman, 'Times New Roman', Times, serif; font-weight: bold; }
 
 /* Link CSS */
 
