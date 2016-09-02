@@ -1,6 +1,7 @@
+@import "compass";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "compass";
+@import "font-awesome-sprockets";
 @import "font-awesome";
 
 
@@ -176,6 +177,7 @@
 .buffer-margin-25 { margin-top: 25px; margin-bottom: 25px; }
 .buffer-margin-20 { margin-top: 20px; margin-bottom: 20px; }
 .buffer-margin-15 { margin-top: 15px; margin-bottom: 15px; }
+.buffer-margin-10 { margin-top: 10px; margin-bottom: 10px; }
 .buffer-margin-5 { margin-top: 5px; margin-bottom: 5px; }
 
 .no-padding { padding: 0 !important; }

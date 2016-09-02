@@ -5,6 +5,7 @@
 // migrate when you can
 .btn-purple { @include button-variant(none, $purple, $light-purple); }
 .btn-blue { @include button-variant(none, $blue, $light-blue); }
+.btn-light-blue { @include button-variant(none, $light-blue, $lighter-blue); }
 
 
 
@@ -73,4 +74,50 @@ a.btn-blue {
 
 #logo-text {
   @include text-vertical-align-middle(60px);
+}
+
+
+/* Account Login Page */
+
+#login {
+  #login-section-title h1 {
+    @extend .text-blue;
+    @extend .fjalla-one;
+    @extend .text-uppercase; 
+  }
+  
+  #existing-customer {
+    @extend .col-md-5;
+    @extend .no-padding;
+
+    #password-credentials {
+      @extend .buffer-padding-10;
+      
+      input {
+        @extend .input-lg;
+        @extend .times-new-roman;
+        @extend .text-light-blue;
+        @extend .border-light-blue-1;
+        @extend .no-border-radius;
+        @extend .buffer-margin-10;
+        @extend .no-margin-top;
+      } 
+    }
+    
+    #login-remember-me {
+      label { @extend .text-light-blue; }
+    }
+    
+    #login-submit {
+      input {
+        @extend .btn-lg;
+        @extend .btn-light-blue;
+        @extend .text-white;
+        @extend .no-border-radius;
+        @extend .text-uppercase;
+      }
+    }
+  }
+  
+  
 }

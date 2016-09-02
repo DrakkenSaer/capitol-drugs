@@ -1,15 +1,12 @@
 <%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path do |f| %>
   <div id="password-credentials">
-    <p>
-      <%= f.email_field :email, :class => 'form-control input-lg times-new-roman text-light-blue border-light-blue-1 square-corners margin-bottom-10', :tabindex => 1, autofocus: true, placeholder: 'Email' %>
-      <%= f.password_field :password, placeholder: 'Password', :class => 'form-control input-lg times-new-roman text-light-blue square-corners margin-bottom-10 border-light-blue-1 login-input', :tabindex => 2 %>
-    </p>
+    <%= f.email_field :email, :class => 'form-control', :tabindex => 1, placeholder: 'Email', autofocus: true %>
+    <%= f.password_field :password, :class => 'form-control', :tabindex => 2, placeholder: 'Password' %>
   </div>
-  <p>
-    <%= f.check_box :remember_me, :tabindex => 3, :class => 'background-white bigger-box border-light-blue' %>
-    <%= f.label :remember_me, Spree.t(:remember_me), :class => 'text-light-blue times-new-roman' %>
-    <!--How do you want to change the check box (size and color)?? -- Lots of options but css alone won't do it-->
-  </p>
+  <div id="login-remember-me">
+    <%= f.check_box :remember_me, :tabindex => 3 %>
+    <%= f.label :remember_me, Spree.t(:remember_me) %>
+  </div>
 
-  <p><%= f.submit Spree.t(:login), :class => 'btn btn-lg btn-light-blue text-white square-corners text-uppercase', :tabindex => 4 %></p>
+  <div id="login-submit"><%= f.submit Spree.t(:login), :class => 'btn', :tabindex => 4 %></div>
 <% end %>
