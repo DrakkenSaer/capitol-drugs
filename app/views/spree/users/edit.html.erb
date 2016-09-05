@@ -18,14 +18,8 @@
 
 <%= form_for Spree::User.new, as: @user, url: spree.user_path(@user), method: :put, id: "user-billing-form" do |f| %>
   <%= render :partial => 'spree/shared/address_form', :locals => { :f => f, address_type: "billing" } %>
-  <p>
-    <%= f.submit Spree.t(:update), :class => 'btn btn-primary' %>
-  </p>
 <% end %>
 
 <%= form_for Spree::User.new, as: @user, url: spree.user_path(@user), method: :put, id: "user-shipping-form" do |f| %>
   <%= render :partial => 'spree/shared/address_form', :locals => { :f => f, address_type: "shipping" } %>
-  <p>
-    <%= f.submit Spree.t(:update), :class => 'btn btn-primary' %>
-  </p>
 <% end %>

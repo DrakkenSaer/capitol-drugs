@@ -8,9 +8,12 @@
       </div>
 
       <div class="panel-body">
-        <%= f.fields_for "#{address_type[0..3]}_address", (@user.send("#{address_type[0..3]}_address") || Spree::Address.default(@user, "#{address_type[0..3]}")) do |ba_form| %>
-          <% ba_form.object ||= Spree::Address.new(country: Spree::Country.new) %>
-          <%= render partial: 'spree/admin/shared/address_form', locals: { f: ba_form, type: "#{address_type}" } %>
+        <%= f.fields_for "#{address_type[0..3]}_address", (@user.send("#{address_type[0..3]}_address") || Spree::Address.default(@user, "#{address_type[0..3]}")) do |form| %>
+          <% form.object ||= Spree::Address.new(country: Spree::Country.new) %>
+          <%= render partial: 'spree/admin/shared/address_form', locals: { f: form, type: "#{address_type}" } %>
+          <p>
+            <%= f.submit Spree.t(:update), :class => 'btn btn-primary' %>
+          </p>
         <% end %>
       </div>
     </div>
