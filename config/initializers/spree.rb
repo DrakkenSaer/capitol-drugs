@@ -19,3 +19,5 @@ Spree.user_class = "Spree::User"
 
 Spree::PermittedAttributes.user_attributes << :firstname
 Spree::PermittedAttributes.user_attributes << :lastname
+Spree::PermittedAttributes.user_attributes << [bill_address_attributes: [:id, :firstname, :lastname, :address1, :address2, :city, :zipcode, :phone, :state_name, :alternative_phone, :company, :state_id, :country_id, :created_at, :updated_at]]
+Spree::PermittedAttributes.user_attributes << [ship_address_attributes: [:id, :firstname, :lastname, :address1, :address2, :city, :zipcode, :phone, :state_name, :alternative_phone, :company, :state_id, :country_id, :created_at, :updated_at]]
