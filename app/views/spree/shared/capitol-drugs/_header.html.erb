@@ -30,7 +30,7 @@
                 <% if spree_user_signed_in? %>
 
                 <li><%= link_to "My Account", account_path, class: "text-center text-vertical-center-height-60 font-size-150" %></li>
-                <li><%= link_to "Wishlist", "#", class: "text-center text-vertical-center-height-60 font-size-150" %></li>
+                <li><%= link_to "Wishlist", default_wishlist_path, class: "text-center text-vertical-center-height-60 font-size-150" %></li>
 
                   <% if current_spree_user.admin? %>
                 <li><%= link_to "Admin", admin_path, class: "text-center text-vertical-center-height-60 font-size-150" %></li>
