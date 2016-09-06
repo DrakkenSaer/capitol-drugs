@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904222050) do
+ActiveRecord::Schema.define(version: 20160906012057) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -933,6 +933,11 @@ ActiveRecord::Schema.define(version: 20160904222050) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.string   "logo_file_size"
+    t.string   "logo_width"
+    t.string   "logo_height"
+    t.datetime "logo_updated_at"
   end
 
   add_index "spree_stores", ["code"], name: "index_spree_stores_on_code"
