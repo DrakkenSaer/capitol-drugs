@@ -30,6 +30,7 @@ gem 'spree_multi_domain', github: 'spree-contrib/spree-multi-domain', branch: '3
 gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: 'master'
 gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '3-1-stable'
+gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-1-stable'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
