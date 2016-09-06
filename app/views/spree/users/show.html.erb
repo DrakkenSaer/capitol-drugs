@@ -43,8 +43,10 @@
   <br />
 </div>
 
-<%= @user.bill_address.firstname %>
-<%= @user.bill_address.lastname %>
+<!-- Two styles of predicates listed below, ternary and if/else... Use what will be easiest for your styling. Remember, we are trying to be DRY. -->
+
+<%= @user.bill_address.firstname? ? true : false %>
+<%= @user.bill_address.lastname? ? @user.bill_address.lastname : "No data to show" %>
 <%= @user.bill_address.address1 %>
 <%= @user.bill_address.address2 %>
 <%= @user.bill_address.city %>
@@ -55,15 +57,16 @@
 <%= @user.bill_address.company %>
 <%= @user.bill_address.lastname %>
 
-
-<%= @user.ship_address.firstname %>
-<%= @user.ship_address.lastname %>
-<%= @user.ship_address.address1 %>
-<%= @user.ship_address.address2 %>
-<%= @user.ship_address.city %>
-<%= @user.ship_address.zipcode %>
-<%= @user.ship_address.phone %>
-<%= @user.ship_address.state_name %>
-<%= @user.ship_address.alternative_phone %>
-<%= @user.ship_address.company %>
-<%= @user.ship_address.lastname %>
+<% if @user.ship_address %>
+  <%= @user.ship_address.firstname %>
+  <%= @user.ship_address.lastname %>
+  <%= @user.ship_address.address1 %>
+  <%= @user.ship_address.address2 %>
+  <%= @user.ship_address.city %>
+  <%= @user.ship_address.zipcode %>
+  <%= @user.ship_address.phone %>
+  <%= @user.ship_address.state_name %>
+  <%= @user.ship_address.alternative_phone %>
+  <%= @user.ship_address.company %>
+  <%= @user.ship_address.lastname %>
+<% end %>
