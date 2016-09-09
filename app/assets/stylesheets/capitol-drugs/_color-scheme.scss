@@ -1,5 +1,3 @@
-@import 'compass';
-
 /* ===================== SASS Mixins ===================== */
 
 $purple: #7360A1;
@@ -37,7 +35,8 @@ $lighter-blue: #DCE7EE;
 
 .input-text-light-blue input, select, textarea { color: light-blue !important; }
 .input-text-light-blue textarea:focus, input:focus { color: light-blue !important; }
- 
+
+
 /* ===================== Background Colors ===================== */
 
 .background-dark-blue-gradient {
@@ -70,6 +69,7 @@ $lighter-blue: #DCE7EE;
 .background-lighter-blue-opacity-40 { background-color: rgba($lighter-blue, 0.4) !important; }
 
 .background-white { background-color: white !important; }
+
 
 /* ===================== Border Colors ===================== */
 
@@ -137,9 +137,13 @@ $lighter-blue: #DCE7EE;
 
 .border-none { border: 0 !important; }
 
+
 /* ================ Button Colors ================ */
 
-.btn-light-blue { background-color: $light-blue; }
+.btn-purple { @include button-variant(none, $purple, $light-purple); }
+.btn-blue { @include button-variant(none, $blue, $light-blue); }
+.btn-light-blue { @include button-variant(none, $light-blue, $lighter-blue); }
+
 
 /* ================ Bootstrap Overrides ================ */
 
