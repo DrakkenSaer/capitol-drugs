@@ -25,7 +25,6 @@ module Spree
                       path: ':rails_root/public/spree/logos/:id/:style/:basename.:extension',
                       convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
     validates_attachment :logo,
-      presence: true,
       content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) }
 
     def find_dimensions
