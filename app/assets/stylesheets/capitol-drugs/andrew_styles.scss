@@ -1,43 +1,4 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import "main.scss";
-#password-credentials {
-    input {
-        @extend .input-lg;
-        @extend .times-new-roman;
-        @extend .text-light-blue;
-        @extend .border-light-blue-1;
-        @extend .no-border-radius;
-        @extend .buffer-margin-10;
-        @extend .no-margin-top;
-    }
-}
 
-#register-submit {
-    .btn {
-        @extend .btn-lg;
-        @extend .btn-light-blue;
-        @extend .text-white;
-        @extend .no-border-radius;
-        @extend .text-uppercase;
-    }
-}
 
-#create-account {
-    #create-account-title {
-        h1 {
-            @extend .fjalla-one;
-            @extend .text-uppercase;
-            @extend .text-blue;
-        }
-        h4 {
-            @extend .times-new-roman;
-            @extend .text-light-blue;
-        }
-    }
-    
-    #new-customer {
-        @extend .col-md-5;
-    }
-}
+

@@ -77,10 +77,55 @@ a.btn-blue {
 }
 
 
-/* Account Login Page */
+/* Account Login & Registration Pages */
+
+#password-credentials {
+  @extend .buffer-padding-10;
+  
+  input {
+    @extend .input-lg;
+    @extend .times-new-roman;
+    @extend .text-light-blue;
+    @extend .border-light-blue-1;
+    @extend .no-border-radius;
+    @extend .buffer-margin-10;
+    @extend .no-margin-top;
+  } 
+}
+
+#signup {
+  #signup-title {
+    h1 {
+      @extend .fjalla-one;
+      @extend .text-uppercase;
+      @extend .text-blue;
+    }
+    h4 {
+      @extend .times-new-roman;
+      @extend .text-light-blue;
+    }
+  }
+    
+  #new-customer {
+    @extend .col-md-5;
+    @extend .no-padding;
+
+    #register-submit {
+      input[type=submit] {
+        @extend .btn;
+        @extend .btn-lg;
+        @extend .btn-light-blue;
+        @extend .text-white;
+        @extend .no-border-radius;
+        @extend .text-uppercase;
+      }
+    }
+  }
+}
+
 
 #login {
-  #login-section-title h1 {
+  #login-title h1 {
     @extend .text-blue;
     @extend .fjalla-one;
     @extend .text-uppercase; 
@@ -90,20 +135,6 @@ a.btn-blue {
     @extend .col-md-5;
     @extend .no-padding;
 
-    #password-credentials {
-      @extend .buffer-padding-10;
-      
-      input {
-        @extend .input-lg;
-        @extend .times-new-roman;
-        @extend .text-light-blue;
-        @extend .border-light-blue-1;
-        @extend .no-border-radius;
-        @extend .buffer-margin-10;
-        @extend .no-margin-top;
-      } 
-    }
-    
     #login-remember-me {
       label { @extend .text-light-blue; }
     }
@@ -118,6 +149,4 @@ a.btn-blue {
       }
     }
   }
-  
-  
 }
