@@ -10,10 +10,22 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
+/* global jQuery */
 
 // Bower packages
+
+(function($){
+    
+    $(document).ready(function(){
+        
+        $('a[data-toggle="collapse"]').click(function(){
+            $(this).find('#sort-arrow').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+            
+        })
+    })  
+})(jQuery);
