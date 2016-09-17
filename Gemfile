@@ -6,7 +6,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-gem 'coffee-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-sass', '~> 4.6.2'
@@ -20,6 +19,9 @@ git 'https://github.com/ably-forks/compass', branch: 'sass-deprecation-warning-f
   gem 'compass-core'
 end
 
+# Polygot dependency
+gem 'coffee-rails'
+
 # Spree E-commerce
 gem 'spree', '~> 3.1.0'
 gem 'spree_auth_devise', '~> 3.1.0'
@@ -31,6 +33,7 @@ gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: 'master'
 gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '3-1-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-1-stable'
+gem 'spree_social_products', github: 'spree-contrib/spree_social_products', branch: 'master'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

@@ -1,10 +1,10 @@
 {
-  "name": "Payfolio",
-  "homepage": "https://github.com/DrakkenSaer/Payfolio",
+  "name": "Capitol Drugs",
+  "homepage": "https://github.com/DrakkenSaer/capitol-drugs",
   "authors": [
     "Drakken Saer <shadowdrakkeen@gmail.com>"
   ],
-  "description": "Payfolio Bower components",
+  "description": "Capitol Drugs Bower components",
   "license": "MIT",
   "ignore": [
     "**/.*",
