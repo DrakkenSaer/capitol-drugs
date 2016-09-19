@@ -1,0 +1,55 @@
+@import "main.scss";
+
+.pagination {
+    @extend .fjalla-one;
+    @extend .border-lighter-blue-1;
+    @extend .text-light-blue;
+    
+    .active a {
+        @extend .background-lighter-blue;
+        @extend .text-white;
+        @extend .border-lighter-blue-1;
+        @extend .no-border-radius;
+    }
+    
+    li {
+        
+    }
+}
+
+.sidebar-main {
+    @extend .panel-group;
+    @extend .fjalla-one;
+    @extend .text-uppercase;
+    
+    .sidebar-panel {
+        @extend .panel;
+        @extend .panel-default;
+        @extend .no-border-radius;
+        @extend .border-lighter-blue-1;
+    }
+    
+    .sidebar-heading {
+        @extend .panel-heading;
+        @extend .background-light-blue;
+        @extend .text-white;
+        @extend .no-border-radius;
+        
+        .taxonomy-root h4 {
+            @extend .panel-title;
+        }
+    }
+    
+    .sidebar-collapse {
+        @extend .panel-collapse;
+        @extend .collapse;
+        @extend .text-blue;
+        @extend .font-size-80;
+    }
+    
+    #sort-arrow {
+        @extend .pull-right;
+        @extend .text-blue;
+    }
+        
+}

@@ -1,10 +1,21 @@
 <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
 
-<nav id="taxonomies" class="sidebar-item" data-hook>
-  <% @taxonomies.each do |taxonomy| %>
+<nav id="taxonomies" class="sidebar-main" role="tablist" aria-multiselect="true" data-hook>
+  <% @taxonomies.each_with_index do |taxonomy, index| %>
     <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-      <h4 class='taxonomy-root'><%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %></h4>
-      <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
+    <div class="sidebar-panel">
+      <div class="sidebar-heading" role="tab" id="heading-<%= index %>">
+        <a role="button" data-toggle="collapse" data-parent="#taxonomies" href="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
+          <h4 class='taxonomy-root'>
+            <%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %>
+            <span class="glyphicon glyphicon-chevron-up" id="sort-arrow"></span>
+          </h4>
+        </a>
+      </div>
+      <div class="sidebar-collapse" role="tabpanel" id="collapse-<%= index %>" aria-labeledby="heading-<%= index %>" aria-expanded="false">
+        <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
+      </div>
+    </div>
     <% end %>
   <% end %>
 </nav>

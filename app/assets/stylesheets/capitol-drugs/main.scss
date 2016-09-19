@@ -12,17 +12,20 @@
 
 /* Font CSS */
 
-.fjalla-one { font-family: 'Fjalla One', sans-serif; }
+.fjalla-one:not(i):not(.glyphicon) { font-family: 'Fjalla One', sans-serif; }
 .text-uppercase, .text-uppercase * { @extend .fjalla-one; }
-.times-new-roman { font-family: TimesNewRoman, 'Times New Roman', Times, serif; }
+.times-new-roman:not(i):not(.glyphicon) { font-family: TimesNewRoman, 'Times New Roman', Times, serif; }
 
 
 /* Link CSS */
 
 a { 
-  transition: all 0.2s linear;
-
+  @include transition(all 0.2s linear);
   @extend .text-decoration-none;
+
+  .btn-blue {
+      @extend .btn-blue;
+  }
 }
 
 
@@ -55,10 +58,6 @@ body {
     @extend .no-border-radius;
     @extend .no-padding;
   }
-}
-
-a.btn-blue {
-    @extend .btn-blue;
 }
 
 #logo-text {
@@ -112,7 +111,6 @@ a.btn-blue {
   }
 }
 
-
 #login {
   #login-title h1 {
     @extend .text-blue;
@@ -139,3 +137,4 @@ a.btn-blue {
     }
   }
 }
+
