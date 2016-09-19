@@ -129,7 +129,7 @@
 .border-radius-10 { @include border-radius(10px); }
 .border-radius-5 { @include border-radius(5px); }
 .border-radius-2 { @include border-radius(2px); }
-.no-border-radius { @include border-radius(0px); }
+.no-border-radius { @include border-radius(0px !important); }
 .no-background { background: none !important; }
 
 .border-shadow-outter-15 { @include box-shadow(0px 0px 15px 0px rgba(0,0,0,0.4)); }
@@ -178,7 +178,9 @@
 .buffer-margin-20 { margin-top: 20px; margin-bottom: 20px; }
 .buffer-margin-15 { margin-top: 15px; margin-bottom: 15px; }
 .buffer-margin-10 { margin-top: 10px; margin-bottom: 10px; }
+.buffer-margin-10-horizontal { margin-left: 10px; margin-right: 10px; }
 .buffer-margin-5 { margin-top: 5px; margin-bottom: 5px; }
+.buffer-margin-5-horizontal { margin-left: 5px; margin-right: 5px; }
 
 .no-padding { padding: 0 !important; }
 .no-padding-left { padding-left: 0 !important;; }

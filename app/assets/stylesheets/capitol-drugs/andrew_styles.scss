@@ -1,19 +1,19 @@
 @import "main.scss";
 
 .pagination {
-    @extend .fjalla-one;
-    @extend .border-lighter-blue-1;
-    @extend .text-light-blue;
-    
-    .active a {
-        @extend .background-lighter-blue;
-        @extend .text-white;
-        @extend .border-lighter-blue-1;
-        @extend .no-border-radius;
-    }
-    
     li {
-        
+        a {
+            @extend .buffer-margin-5-horizontal;
+            @extend .fjalla-one;
+            @extend .border-lighter-blue-1;
+            @extend .text-light-blue;
+            @extend .no-border-radius;
+        }
+
+        &.active a {
+            @extend .text-white;
+            @extend .background-lighter-blue;
+        }
     }
 }
 
@@ -51,5 +51,4 @@
         @extend .pull-right;
         @extend .text-blue;
     }
-        
 }

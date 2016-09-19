@@ -26,8 +26,8 @@ $lighter-blue: #DCE7EE;
 .text-dark-purple, .text-dark-purple *  { color: $dark-purple; @include input-placeholder { color: $dark-purple !important }; }
 .text-darker-purple, .text-darker-purple *  { color: $darker-purple; @include input-placeholder { color: $darker-purple !important }; }
 
-.text-blue, .text-blue *  { color: $blue; @include input-placeholder { color: $blue !important; }; }
-.text-light-blue, .text-light-blue *  { color: $light-blue; @include input-placeholder { color: $light-blue !important; }; }
+.text-blue, .text-blue *  { color: $blue !important; @include input-placeholder { color: $blue !important; }; }
+.text-light-blue, .text-light-blue *  { color: $light-blue !important; @include input-placeholder { color: $light-blue !important; }; }
 .text-lighter-blue, .text-lighter-blue *  { color: $lighter-blue; @include input-placeholder { color: $lighter-blue !important; }; }
 .text-dark-blue, .text-dark-blue *  { color: $dark-blue; @include input-placeholder { color: $dark-blue !important; }; }
 .text-darker-blue, .text-darker-blue *  { color: $darker-blue; @include input-placeholder { color: $darker-blue !important }; }
