@@ -1,9 +1,5 @@
 module Spree
   Store.class_eval do
-    # save the w,h of the original image (from which others can be calculated)
-    # we need to look at the write-queue for images which have not been saved yet
-    before_save :find_dimensions, if: :logo_updated_at_changed?
-
     has_and_belongs_to_many :products, join_table: 'spree_products_stores'
     has_many :taxonomies
     has_many :orders
@@ -24,9 +20,15 @@ module Spree
                       path: ':rails_root/public/spree/logos/:id/:style/:basename.:extension',
                       convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
 
-    validate :no_logo_errors
-    validates_attachment :logo,
-      content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) }
+    if respond_to? :logo_content_type
+      # save the w,h of the original image (from which others can be calculated)
+      # we need to look at the write-queue for images which have not been saved yet
+      before_save :find_dimensions, if: :logo_updated_at_changed?
+
+      validate :no_logo_errors
+      validates_attachment :logo,
+        content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) }
+    end
 
     def find_dimensions
       temporary = logo.queued_for_write[:original]

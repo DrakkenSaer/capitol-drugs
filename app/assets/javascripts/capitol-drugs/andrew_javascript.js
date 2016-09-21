@@ -1,12 +1,9 @@
 /* global jQuery */
 
 (function($){
-    
     $(document).ready(function(){
-        
-        $('a[data-toggle="collapse"]').click(function(){
-            $(this).find('#sort-arrow').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
-            
-        })
-    })  
+        $('a[data-toggle="collapse"]').on('click', function () {
+            $(this).find('.toggle-chevron').toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+        });
+    });
 })(jQuery);

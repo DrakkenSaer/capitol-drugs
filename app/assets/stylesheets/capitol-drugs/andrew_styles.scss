@@ -47,7 +47,8 @@
         @extend .font-size-80;
     }
     
-    #sort-arrow {
+    // Be sure to check how many times Ruby will render something. There were two elements using this styling, so I changed it from an ID to a class
+    .toggle-chevron {
         @extend .pull-right;
         @extend .text-blue;
     }
