@@ -75,12 +75,6 @@ GIT
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
 
-PATH
-  remote: ../spree_tags
-  specs:
-    spree_tags (3.1.0)
-      spree_core (~> 3.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -211,7 +205,7 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
-    jwt (1.5.5)
+    jwt (1.5.6)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -325,7 +319,7 @@ GEM
       activesupport (= 4.2.7)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (11.2.2)
+    rake (11.3.0)
     ransack (1.4.1)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
@@ -502,7 +496,6 @@ DEPENDENCIES
   spree_reviews!
   spree_social!
   spree_social_products!
-  spree_tags!
   spree_wishlist!
   spring
   sqlite3

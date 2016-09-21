@@ -35,8 +35,6 @@ gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '3-1-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-1-stable'
 gem 'spree_social_products', github: 'spree-contrib/spree_social_products', branch: 'master'
 
-gem 'spree_tags', :path => '../spree_tags'
-
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
