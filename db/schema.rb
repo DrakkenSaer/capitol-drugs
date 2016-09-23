@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160906041258) do
+ActiveRecord::Schema.define(version: 20160923184134) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -180,6 +180,16 @@ ActiveRecord::Schema.define(version: 20160906041258) do
 
   add_index "spree_gateways", ["active"], name: "index_spree_gateways_on_active"
   add_index "spree_gateways", ["test_mode"], name: "index_spree_gateways_on_test_mode"
+
+  create_table "spree_identities", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "spree_identities", ["product_id"], name: "index_spree_identities_on_product_id"
+  add_index "spree_identities", ["tag_id"], name: "index_spree_identities_on_tag_id"
 
   create_table "spree_inventory_units", force: :cascade do |t|
     t.string   "state"
@@ -986,6 +996,15 @@ ActiveRecord::Schema.define(version: 20160906041258) do
   add_index "spree_stores", ["code"], name: "index_spree_stores_on_code"
   add_index "spree_stores", ["default"], name: "index_spree_stores_on_default"
   add_index "spree_stores", ["url"], name: "index_spree_stores_on_url"
+
+  create_table "spree_tags", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "color"
+    t.boolean  "display",     default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "spree_tax_categories", force: :cascade do |t|
     t.string   "name"

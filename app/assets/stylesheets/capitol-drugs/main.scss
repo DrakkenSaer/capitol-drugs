@@ -138,7 +138,7 @@ body {
   }
 }
 
-/* Products Page */
+/* Products Index Page */
 
 .pagination {
     li {
@@ -191,4 +191,22 @@ body {
         @extend .pull-right;
         @extend .text-blue;
     }
+}
+
+
+/* Product show Page */
+
+#product-images {
+  #main-image {
+    img { @extend .col-xs-6; max-height: 450px; }
+  }
+}
+
+
+
+#product-description {
+  .product-title { @extend .fjalla-one; }
+  .well { @extend .fjalla-one; }
+  .product-title { @extend .fjalla-one; }
+  .tag { @extend .fjalla-one; }
 }

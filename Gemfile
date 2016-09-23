@@ -34,6 +34,7 @@ gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', bran
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '3-1-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-1-stable'
 gem 'spree_social_products', github: 'spree-contrib/spree_social_products', branch: 'master'
+gem 'spree_tags', github: 'DrakkenSaer/spree_tags', branch: '3-1-stable'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
