@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/DrakkenSaer/spree_tags.git
-  revision: 73f6e9b964ecf56fa06167308ab05f27e023487c
+  revision: ec4d0e951274e4f0b889b2e60be3f6db27747664
   branch: 3-1-stable
   specs:
     spree_tags (3.1.0)

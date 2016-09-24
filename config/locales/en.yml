@@ -21,6 +21,7 @@
 
 en:
   product_or_brand_search: "Search by product name or brand"
+  reviews_and_ratings: "Reviews And Ratings"
 
   activerecord:
     attributes:

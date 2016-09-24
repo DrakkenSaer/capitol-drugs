@@ -286,4 +286,42 @@ body {
     @extend .text-uppercase;
   }
   .tag { @extend .raleway; }
+  
+  #reviews{
+    #ratings-section-title, #reviews-section-title {
+      @extend .background-light-blue;
+      @extend .buffer-padding-10;
+      @extend .text-white;
+    }
+    #ratings-section {
+      @extend .text-light-blue;
+    }
+    
+    .review {
+      span[itemprop="author"] {
+        @extend .buffer-padding-10-horizontal;
+        @extend .text-light-blue;
+      }
+      .review-rating {
+        @extend .buffer-padding-10-horizontal;
+        @extend .no-padding-left;
+      }
+      .attribution {
+        @extend .buffer-padding-10-horizontal;
+        @extend .border-left-lighter-blue-1;
+        @extend .text-lighter-blue;
+      }
+    }
+    
+    a.btn {
+      @extend .btn-lg;
+      @extend .btn-light-purple;
+      @extend .no-border-radius;
+      @extend .text-white;
+      @extend .text-uppercase;
+      @extend .fjalla-one;
+      @extend .col-xs-4;
+      @extend .col-xs-offset-4;
+    }
+  }
 }
