@@ -288,7 +288,7 @@ body {
   .tag { @extend .raleway; }
   
   #reviews{
-    #ratings-section-title, #reviews-section-title {
+    .reviews-section-title {
       @extend .background-light-blue;
       @extend .buffer-padding-10;
       @extend .text-white;
