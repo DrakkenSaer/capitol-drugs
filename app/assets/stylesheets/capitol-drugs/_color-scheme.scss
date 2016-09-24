@@ -141,6 +141,7 @@ $lighter-blue: #DCE7EE;
 /* ================ Button Colors ================ */
 
 .btn-purple { @include button-variant(none, $purple, $light-purple); }
+.btn-light-purple { @include button-variant(none, $light-purple, $lighter-purple); }
 .btn-blue { @include button-variant(none, $blue, $light-blue); }
 .btn-light-blue { @include button-variant(none, $light-blue, $lighter-blue); }
 

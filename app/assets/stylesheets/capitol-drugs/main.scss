@@ -13,7 +13,7 @@
 /* Font CSS */
 
 .fjalla-one:not(i):not(.glyphicon) { font-family: 'Fjalla One', sans-serif; }
-.text-uppercase, .text-uppercase * { @extend .fjalla-one; }
+.raleway:not(i):not(.glyphicon) { font-family: 'Raleway', sans-serif; }
 .times-new-roman:not(i):not(.glyphicon) { font-family: TimesNewRoman, 'Times New Roman', Times, serif; }
 
 
@@ -86,6 +86,7 @@ body {
     h1 {
       @extend .fjalla-one;
       @extend .text-uppercase;
+      @extend .fjalla-one;
       @extend .text-blue;
     }
     h4 {
@@ -106,6 +107,7 @@ body {
         @extend .text-white;
         @extend .no-border-radius;
         @extend .text-uppercase;
+        @extend .fjalla-one;
       }
     }
   }
@@ -115,7 +117,8 @@ body {
   #login-title h1 {
     @extend .text-blue;
     @extend .fjalla-one;
-    @extend .text-uppercase; 
+    @extend .text-uppercase;
+    @extend .fjalla-one;
   }
   
   #existing-customer {
@@ -133,6 +136,7 @@ body {
         @extend .text-white;
         @extend .no-border-radius;
         @extend .text-uppercase;
+        @extend .fjalla-one;
       }
     }
   }
@@ -161,6 +165,7 @@ body {
     @extend .panel-group;
     @extend .fjalla-one;
     @extend .text-uppercase;
+    @extend .fjalla-one;
     
     .sidebar-panel {
         @extend .panel;
@@ -196,17 +201,89 @@ body {
 
 /* Product show Page */
 
-#product-images {
-  #main-image {
-    img { @extend .col-xs-6; max-height: 450px; }
+#product-details {
+  #product-images {
+    height: 450px;
+
+    #main-image img { @extend .col-xs-6; max-height: 450px; }
   }
-}
+  
+  #product-description { 
+    @extend .raleway;
+    
+    #description {
+      @extend .border-top-light-blue-1;
+      @extend .text-light-blue;
+      @extend .buffer-margin-20;
+      @extend .buffer-padding-20;
+    }
+  }
 
-
-
-#product-description {
-  .product-title { @extend .fjalla-one; }
-  .well { @extend .fjalla-one; }
-  .product-title { @extend .fjalla-one; }
-  .tag { @extend .fjalla-one; }
+  #cart-form {
+    #product-price {
+      @extend .buffer-margin-10;
+    
+      .price {
+        @extend .text-light-purple;
+        @extend .fjalla-one; 
+        @extend .text-bold;
+      }
+    }
+    
+    #product-variants { 
+      @extend .buffer-margin-10;
+      
+      #variant-select {
+        @extend .text-uppercase;
+        @extend .no-border-radius;
+        @extend .border-blue-1;
+        @extend .text-blue;
+        @extend .input-lg;
+        @extend .buffer-padding-10;
+      }
+    }
+    
+    #product-supply {
+      @extend .buffer-margin-10;
+      
+      #quantity {
+        @extend .no-border-radius;
+        @extend .input-lg;
+        @extend .fjalla-one;
+        @extend .border-light-purple-1;
+        @extend .text-light-purple;
+      }
+      #add-to-cart-button {
+        @extend .btn-lg;
+        @extend .btn-light-purple;
+        @extend .no-border-radius;
+        @extend .text-white;
+        @extend .text-uppercase;
+        @extend .fjalla-one;
+        @extend .col-xs-12;
+      }
+    }
+    
+    #wishlist-form button {
+      @extend .btn-lg;
+      @extend .btn-light-purple;
+      @extend .no-border-radius;
+      @extend .text-white;
+      @extend .text-uppercase;
+      @extend .fjalla-one;
+      @extend .col-xs-12;
+    }
+  }
+  
+  .product-section-title {
+    @extend .text-center;
+    @extend .text-uppercase;
+    @extend .text-dark-blue;
+    @extend .fjalla-one;
+  }
+  .product-title { 
+    @extend .fjalla-one;
+    @extend .text-uppercase;
+  }
+  .tag { @extend .raleway; }
 }
