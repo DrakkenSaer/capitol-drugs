@@ -12,9 +12,9 @@
 
 /* Font CSS */
 
-.fjalla-one:not(i):not(.glyphicon) { font-family: 'Fjalla One', sans-serif; }
-.raleway:not(i):not(.glyphicon) { font-family: 'Raleway', sans-serif; }
-.times-new-roman:not(i):not(.glyphicon) { font-family: TimesNewRoman, 'Times New Roman', Times, serif; }
+.fjalla-one:not(i):not(.glyphicon), .fjalla-one *:not(i):not(.glyphicon) { font-family: 'Fjalla One', sans-serif; }
+.raleway:not(i):not(.glyphicon), .raleway *:not(i):not(.glyphicon) { font-family: 'Raleway', sans-serif; }
+.times-new-roman:not(i):not(.glyphicon), .times-new-roman *:not(i):not(.glyphicon) { font-family: TimesNewRoman, 'Times New Roman', Times, serif; }
 
 
 /* Link CSS */
@@ -48,20 +48,22 @@ body {
 
 /* Header */
 
-#link-to-cart {
-  a {
-    @include text-vertical-align-middle(60px);
-
-    @extend .col-xs-12;
-    @extend .btn;
-    @extend .btn-blue;
-    @extend .no-border-radius;
-    @extend .no-padding;
+#spree-header {
+  #link-to-cart {
+    a {
+      @include text-vertical-align-middle(60px);
+  
+      @extend .col-xs-12;
+      @extend .btn;
+      @extend .btn-blue;
+      @extend .no-border-radius;
+      @extend .no-padding;
+    }
   }
-}
-
-#logo-text {
-  @include text-vertical-align-middle(60px);
+  
+  #logo-text {
+    @include text-vertical-align-middle(60px);
+  }
 }
 
 
@@ -141,6 +143,7 @@ body {
     }
   }
 }
+
 
 /* Products Index Page */
 

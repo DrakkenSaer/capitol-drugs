@@ -28,7 +28,7 @@
                 <%= small_image(product, itemprop: "image") %><br/>
               <% end %>
             </div>
-            <div class="text-center text-uppercase">
+            <div class="text-center text-uppercase fjalla-one">
                 <div class="text-white" style="background: red;">New</div>
                 <%= content_tag(:span, truncate(product.name, length: 50), class: 'info text-dark-blue font-size-120', itemprop: "name", title: product.name) %>
                 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
