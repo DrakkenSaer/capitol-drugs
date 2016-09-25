@@ -5,9 +5,9 @@
   <span itemprop="author">
       <% if review.show_identifier %>
         <% if Spree::Reviews::Config[:show_email] && review.user %>
-          <%= review.user.email %>
+          <%= user_email_or_name(review.user) %>
         <% else %>
-          <%= review.user.firstname %>
+          <%= review.name %>
         <% end %>
       <% else %>
         <%= Spree.t(:anonymous) %>
