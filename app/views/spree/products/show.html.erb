@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="col-md-4" data-hook="product_right_part">
+    <div class="col-md-4 col-xs-12" data-hook="product_right_part">
       <div data-hook="product_right_part_wrap">
         <h1 class="product-title text-dark-blue" itemprop="name"><%= @product.name %></h1>
 
@@ -29,7 +29,7 @@
       </div>
     </div>
     
-    <div class="col-md-12" data-hook="product_bottom_part">
+    <div class="col-xs-12" data-hook="product_bottom_part">
       <div id="product-description" data-hook="product_description">
         <div id="description" itemprop="description" data-hook="description">
           <%= product_description(@product) %>
