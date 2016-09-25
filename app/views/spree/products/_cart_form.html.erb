@@ -77,7 +77,7 @@
 <% end %>
 
 <script>
-  $(document).ready(function(){
+  $(document).on('turbolinks:load', function() {
     var $list = $("#product-variants ul"), $select = $('<select class="col-xs-12 form-control" id="variant-select" />');
     
     $list.children('li').each(function(index) {
