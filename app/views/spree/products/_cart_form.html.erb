@@ -1,36 +1,32 @@
 <%= form_for :order, url: populate_orders_path do |f| %>
   <div class="row" id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 
-    <% if @product.price_in(current_currency) && !@product.price.nil? %>
-      <div data-hook="product_price">
-        <div id="product-price" class="col-xs-12">
-          <div>
-            <span class="lead price selling" itemprop="price">
-              <%= display_price(@product) %>
-            </span>
-            <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
-          </div>
+    <div data-hook="product_price">
+      <div id="product-price" class="col-xs-6">
+      <% if @product.price_in(current_currency) && !@product.price.nil? %>
+        <div>
+          <span class="lead price selling" itemprop="price">
+            <%= display_price(@product) %>
+          </span>
+          <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+        </div>
 
-          <% if @product.master.can_supply? %>
-            <link itemprop="availability" href="https://schema.org/InStock" />
-          <% elsif @product.variants.empty? %>
-            <br>
-            <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
-          <% end %>
+        <% if @product.master.can_supply? %>
+          <link itemprop="availability" href="https://schema.org/InStock" />
+        <% elsif @product.variants.empty? %>
+          <br>
+          <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+        <% end %>
+      <% else %>
+        <div>
+          <span class="price selling" itemprop="price">
+            <%= Spree.t('product_not_available_in_this_currency') %>
+          </span>
         </div>
+      <% end %>
       </div>
-    <% else %>
-      <div data-hook="product_price">
-        <div id="product-price" class="col-xs-12">
-          <div>
-            <span class="price selling" itemprop="price">
-              <%= Spree.t('product_not_available_in_this_currency') %>
-            </span>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    
+    </div>
+      
     <% if @product.variants_and_option_values(current_currency).any? %>
       <div id="product-variants" class="col-xs-12">
         <ul class="list-group">

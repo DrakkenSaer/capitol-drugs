@@ -148,20 +148,20 @@ body {
 /* Products Index Page */
 
 .pagination {
-    li {
-        a {
-            @extend .buffer-margin-5-horizontal;
-            @extend .fjalla-one;
-            @extend .border-lighter-blue-1;
-            @extend .text-light-blue;
-            @extend .no-border-radius;
-        }
-
-        &.active a {
-            @extend .text-white;
-            @extend .background-lighter-blue;
-        }
+  li {
+    a {
+        @extend .buffer-margin-5-horizontal;
+        @extend .fjalla-one;
+        @extend .border-lighter-blue-1-important;
+        @extend .text-light-blue;
+        @extend .no-border-radius;
     }
+
+    &.active a {
+        @extend .text-white;
+        @extend .background-lighter-blue;
+    }
+  }
 }
 
 .sidebar-main {
@@ -232,6 +232,12 @@ body {
         @extend .text-bold;
       }
     }
+
+    #product-stars { 
+      @extend .buffer-margin-10;
+      
+      span { @extend .pull-right; }
+    }
     
     #product-variants { 
       @extend .buffer-margin-10;
@@ -274,7 +280,7 @@ body {
       @extend .text-white;
       @extend .text-uppercase;
       @extend .fjalla-one;
-      @extend .col-xs-12;
+      @extend .width-100;
     }
   }
   
@@ -287,6 +293,7 @@ body {
   .product-title { 
     @extend .fjalla-one;
     @extend .text-uppercase;
+    @extend .text-dark-blue;
   }
   .tag { @extend .raleway; }
   
@@ -327,4 +334,22 @@ body {
       @extend .col-xs-offset-4;
     }
   }
+}
+
+
+/* ============= Gem Modifications ============== */
+
+
+/* Social Nav */
+
+#social_nav h6 {
+  @extend .product-title;
+  @extend .font-size-150;
+}
+
+
+/* Product Reviews & Ratings */
+
+.star-rating {
+  @extend .buffer-margin-5-horizontal;
 }

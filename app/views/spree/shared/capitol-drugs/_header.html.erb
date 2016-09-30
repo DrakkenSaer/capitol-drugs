@@ -22,7 +22,7 @@
           </div>
           <div class="col-md-2 col-xs-12 no-padding">
             <div class="dropdown">
-              <button class="btn btn-blue width-100 no-border-radius text-lighter-purple-important text-uppercase fjalla-one buffer-padding-20 font-size-120 dropdown-toggle" type="button" id="signed-in-dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-blue width-100 no-border-radius no-border-bottom text-lighter-purple-important text-uppercase fjalla-one buffer-padding-20 font-size-120 dropdown-toggle" type="button" id="signed-in-dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= spree_user_signed_in? ? "Hello #{user_email_or_name(current_spree_user).truncate(10)}" : "Login / Register" %>
                 <span class="caret"></span>
               </button>
