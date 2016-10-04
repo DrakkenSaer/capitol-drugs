@@ -1,25 +1,29 @@
 <div class="col-md-6 col-md-offset-3">
-  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+  <div class="row">
+    <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+  </div>
 
-  <div class="panel panel-default", id: "user-information-form">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= Spree.t(:editing_user) %></h3>
-    </div>
-    <div class="panel-body">
-      <%= form_for Spree::User.new, as: @user, :url => spree.user_path(@user), :method => :put do |f| %>
-        <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
-        <p>
-          <%= f.submit Spree.t(:update), :class => 'btn btn-primary' %>
-        </p>
-      <% end %>
+  <div class="row">
+    <div class="panel panel-default", id: "user-information-form">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= Spree.t(:editing_user) %></h3>
+      </div>
+      <div class="panel-body">
+        <%= form_for Spree::User.new, as: @user, :url => spree.user_path(@user), :method => :put do |f| %>
+          <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+          <p>
+            <%= f.submit Spree.t(:update), :class => 'btn btn-primary' %>
+          </p>
+        <% end %>
+      </div>
     </div>
   </div>
+
+  <%= form_for Spree::User.new, as: @user, url: spree.user_path(@user), method: :put, id: "user-billing-form" do |f| %>
+    <%= render :partial => 'spree/shared/address_form', :locals => { :f => f, address_type: "billing" } %>
+  <% end %>
+  
+  <%= form_for Spree::User.new, as: @user, url: spree.user_path(@user), method: :put, id: "user-shipping-form" do |f| %>
+    <%= render :partial => 'spree/shared/address_form', :locals => { :f => f, address_type: "shipping" } %>
+  <% end %>
 </div>
-
-<%= form_for Spree::User.new, as: @user, url: spree.user_path(@user), method: :put, id: "user-billing-form" do |f| %>
-  <%= render :partial => 'spree/shared/address_form', :locals => { :f => f, address_type: "billing" } %>
-<% end %>
-
-<%= form_for Spree::User.new, as: @user, url: spree.user_path(@user), method: :put, id: "user-shipping-form" do |f| %>
-  <%= render :partial => 'spree/shared/address_form', :locals => { :f => f, address_type: "shipping" } %>
-<% end %>

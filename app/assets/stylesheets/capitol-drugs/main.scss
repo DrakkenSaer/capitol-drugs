@@ -201,6 +201,36 @@ body {
     }
 }
 
+.product-body { 
+  height: 240px;
+  
+  @extend .text-center;
+  
+  [data-hook="product_item_tags"] {
+    @extend .text-uppercase;
+    @extend .fjalla-one;
+    
+    span.info { 
+      @extend .text-dark-blue;
+      @extend .font-size-120;
+    }
+    span.price { @extend .text-blue; }
+  }
+}
+
+.taxon-title {
+  @extend .text-uppercase;
+  @extend .fjalla-one;
+  @extend .text-light-blue;
+  @extend .border-bottom-light-blue-1;
+  @extend .buffer-padding-5;
+}
+
+ol.breadcrumb {
+  @extend .no-background;
+  @extend .text-light-blue;
+}
+
 
 /* Product show Page */
 
@@ -303,7 +333,7 @@ body {
       @extend .buffer-padding-10;
       @extend .text-white;
     }
-    #ratings-section {
+    #ratings-section, .reviews-none {
       @extend .text-light-blue;
     }
     

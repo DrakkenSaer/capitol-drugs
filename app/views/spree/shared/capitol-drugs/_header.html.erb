@@ -1,5 +1,5 @@
 <div class="no-background" id="spree-header">
-  <header class="no-background no-padding-bottom" id="header" data-hook>
+  <header class="no-background" id="header" data-hook>
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12">
@@ -53,9 +53,9 @@
       <div class="row">
           <%= render partial: 'spree/shared/capitol-drugs/nav_bar' %>
       </div>
+      <div class="row">
+        <%= render partial: 'spree/shared/capitol-drugs/main_nav_bar' if store_menu? %>
+      </div>
     </div>
   </header>
-  <div>
-    <%= render partial: 'spree/shared/capitol-drugs/main_nav_bar' if store_menu? %>
-  </div>
 </div>

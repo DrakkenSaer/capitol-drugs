@@ -7,9 +7,6 @@
   </dl>
 </div>
 
-<%= @user.firstname %>
-<%= @user.lastname %>
-
 <div data-hook="account_my_orders" class="account-my-orders">
   <h3><%= Spree.t(:my_orders) %></h3>
   <% if @orders.present? %>
@@ -28,7 +25,7 @@
       <% @orders.each do |order| %>
         <tr>
           <td class="order-number"><%= link_to order.number, order_url(order) %></td>
-          <td class="order-date"><%= l order.completed_at.to_date %></td>
+          <td class="order-date"><%= order.completed_at.to_date %></td>
           <td class="order-status"><%= Spree.t("order_state.#{order.state}").titleize %></td>
           <td class="order-payment-state"><%= Spree.t("payment_states.#{order.payment_state}").titleize if order.payment_state %></td>
           <td class="order-shipment-state"><%= Spree.t("shipment_states.#{order.shipment_state}").titleize if order.shipment_state %></td>
@@ -45,17 +42,19 @@
 
 <!-- Two styles of predicates listed below, ternary and if/else... Use what will be easiest for your styling. Remember, we are trying to be DRY. -->
 
-<%= @user.bill_address.firstname? ? true : false %>
-<%= @user.bill_address.lastname? ? @user.bill_address.lastname : "No data to show" %>
-<%= @user.bill_address.address1 %>
-<%= @user.bill_address.address2 %>
-<%= @user.bill_address.city %>
-<%= @user.bill_address.zipcode %>
-<%= @user.bill_address.phone %>
-<%= @user.bill_address.state_name %>
-<%= @user.bill_address.alternative_phone %>
-<%= @user.bill_address.company %>
-<%= @user.bill_address.lastname %>
+<% if @user.bill_address %>
+  <%= @user.bill_address.firstname? ? true : false %>
+  <%= @user.bill_address.lastname? ? @user.bill_address.lastname : "No data to show" %>
+  <%= @user.bill_address.address1 %>
+  <%= @user.bill_address.address2 %>
+  <%= @user.bill_address.city %>
+  <%= @user.bill_address.zipcode %>
+  <%= @user.bill_address.phone %>
+  <%= @user.bill_address.state_name %>
+  <%= @user.bill_address.alternative_phone %>
+  <%= @user.bill_address.company %>
+  <%= @user.bill_address.lastname %>
+<% end %>
 
 <% if @user.ship_address %>
   <%= @user.ship_address.firstname %>

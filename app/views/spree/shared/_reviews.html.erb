@@ -1,7 +1,7 @@
 <div id="reviews">
   <h2 class="product-section-title"><%= I18n.t(:reviews_and_ratings) %></h2>
   <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
-    <p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
+    <p class="reviews-none text-center"><%= Spree.t(:no_reviews_available) %></p>
   <% else %>
     <h4 class="col-md-12 reviews-section-title">Ratings Snapshot</h4>
     <div class="col-md-12" id="ratings-section">

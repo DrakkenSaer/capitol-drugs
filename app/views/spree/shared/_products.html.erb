@@ -17,23 +17,29 @@
 </div>
 
 <% if products.any? %>
+  <% if products.respond_to?(:total_pages) %>
+  <div class="text-center">
+    <%= paginate products %>
+  </div>
+  <% end %>
+
   <div id="products" class="row" data-hook>
     <% products.each do |product| %>
       <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
       <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 col-xs-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
         <div class="product-body">
           <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
-            <div class="text-center">
+            <div>
               <%= link_to url, itemprop: "url" do %>
                 <%= small_image(product, itemprop: "image") %><br/>
               <% end %>
             </div>
-            <div class="text-center text-uppercase fjalla-one">
-                <div class="text-white" style="background: red;">New</div>
-                <%= content_tag(:span, truncate(product.name, length: 50), class: 'info text-dark-blue font-size-120', itemprop: "name", title: product.name) %>
-                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                    <span class="price selling lead text-blue" itemprop="price"><%= display_price(product) %></span>
-                </div>
+            <br>
+            <div data-hook="product_item_tags">
+              <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+              <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
+              </div>
             </div>
           <% end %>
         </div>
@@ -44,5 +50,7 @@
 <% end %>
 
 <% if products.respond_to?(:total_pages) %>
+<div class="text-center">
   <%= paginate products %>
+</div>
 <% end %>
