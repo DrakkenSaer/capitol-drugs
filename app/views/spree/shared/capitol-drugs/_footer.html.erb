@@ -1,67 +1,89 @@
-<div class="row background-darker-purple">
-    <div class="col-xs-12 buffer-padding-70">
-        <div class="col-md-8 col-md-offset-1 col-sm-6">
-            <div class="col-md-4 text-lighter-purple">
-                <h2 class="buffer-margin-30">About Us</h2>
-                <ul class="list-unstyled text-uppercase fjalla-one font-size-110">
-                    <li class="buffer-margin-5"><%= link_to "Who We Are", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Our Stories", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Mission & Values", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Our Practitioners", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Capitol in the Community", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Careers", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "News & Events", "#" %></li>
-                </ul>
-            </div>
-            <div class="col-md-4 text-lighter-purple">
-                <h2 class="buffer-margin-30">Customer Service</h2>
-                <ul class="list-unstyled text-uppercase fjalla-one font-size-110">
-                    <li class="buffer-margin-5"><%= link_to "Quality Assurance", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Order Tracking", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Login Help", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Terms & Conditons", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Return Policy", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Privacy Policy", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "California Transparency Act", "#" %></li>
-                </ul>
-            </div>
-            <div class="col-md-4 text-lighter-purple">
-                <h2 class="buffer-margin-30">Pharmacy</h2>
-                <ul class="list-unstyled text-uppercase fjalla-one font-size-110">
-                    <li class="buffer-margin-5"><%= link_to "Our Locations", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Transfer Prescriptions", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Immunization", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "Compounding Service", "#" %></li>
-                    <li class="buffer-margin-5"><%= link_to "HIPPA & Patient Survey", "#" %></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 text-lighter-purple buffer-margin-30">
-            <%= link_to "Capitol Drugs", root_path, class: "text-uppercase fjalla-one text-light-blue font-size-180" %>
-            <div>
-                Alternative & Traditional Therapies United
-            </div>
-            <ul class="list-unstyled list-inline buffer-margin-15">
-                <li class="font-size-25px"><%= link_to fa_icon("envelope"), "#" %></li>
-                <li class="font-size-25px"><%= link_to fa_icon("facebook-official"), "#" %></li>
-                <li class="font-size-25px"><%= link_to fa_icon("twitter"), "#" %></li>
-                <li class="font-size-25px"><%= link_to fa_icon("foursquare"), "#" %></li>
-                <li class="font-size-25px"><%= link_to fa_icon("yelp"), "#" %></li>
+<footer>
+    <div class="row background-lighter-blue text-center buffer-padding-20">
+        <h2 class="text-blue text-uppercase fjalla-one">Connect with Capitol</h2>
+        <p class="text-blue text-bold">Follow us or signup for email promotions</p>
+        <div>
+            <ul class="list-unstyled list-inline buffer-margin-10">
+              <li class="font-size-25px"><%= link_to fa_icon("facebook-official"), "#" %></li>
+              <li class="font-size-25px"><%= link_to fa_icon("twitter"), "#" %></li>
+              <li class="font-size-25px"><%= link_to fa_icon("foursquare"), "#" %></li>
+              <li class="font-size-25px"><%= link_to fa_icon("yelp"), "#" %></li>
             </ul>
-            <p class="buffer-margin-20 font-size-120">Get our store specials, news & updates.</p>
-            <%= form_tag "#", method: :get do %>
-                <%= text_field_tag :subscribe, nil, placeholder: "Your email address",  class: "form-control background-darker-purple no-border-radius" %>
+            <%= form_tag "#", method: :get, class: "col-sm-4 col-sm-offset-4 buffer-margin-10" do %>
+                <div class="input-group">
+                    <%= text_field_tag :subscribe, nil, placeholder: "Your email address", class: "form-control background-lighter-blue no-border-radius border-blue-1 text-blue" %>
+                    <span class="input-group-btn">
+                        <%= submit_tag "Submit", class: "btn btn-blue border-blue-1-important text-white text-uppercase fjalla-one no-border-radius" %>
+                    </span>
+                </div>
             <% end %>
-            <div class="buffer-margin-30">
-                <small>Copyright &copy; <%= Date.today.year %> Capitol Drugs. All Rights Reserved.</small>
-            </div>
         </div>
-        <div class="col-md-8 col-md-offset-1 col-xs-12">
-            <div class="col-xs-12">
-                <p class="text-purple buffer-padding-30 no-padding-bottom border-top-purple-1 font-size-90">
-                    This internet site is hosted by Living Naturally, a website service provider to natural health stores nationwide. Living Naturally and Capitol Drugs have no means of indepenedently evaluating the safety of functionality of the products offered by their suppliers and affiliates and thus can neither endorse nor recommend products. Information presented is of the general nature for educational and informational purposes only. Statements about the products and health conditions have not been evaluated by the US Food and Drug Administration. Products and information presented herein are not intended to diagnose, treat, cure, or prevent disease. If you have any concerns about your own health, you should always consult with a physician or other healthcare professional. Your use of this site indicates your agreement to be bound by our Terms and Conditions.
-                </p>
+    </div>
+    <div class="row background-darker-purple">
+        <div class="col-xs-12 buffer-padding-70">
+            <div class="col-md-8 col-md-offset-1 col-sm-6">
+                <div class="col-md-4 text-lighter-purple">
+                    <h2 class="buffer-margin-30">About Us</h2>
+                    <ul class="list-unstyled text-uppercase fjalla-one font-size-110">
+                        <li class="buffer-margin-5"><%= link_to "Who We Are", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Our Stories", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Mission & Values", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Our Practitioners", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Capitol in the Community", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Careers", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "News & Events", "#" %></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-lighter-purple">
+                    <h2 class="buffer-margin-30">Customer Service</h2>
+                    <ul class="list-unstyled text-uppercase fjalla-one font-size-110">
+                        <li class="buffer-margin-5"><%= link_to "Quality Assurance", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Order Tracking", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Login Help", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Terms & Conditons", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Return Policy", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Privacy Policy", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "California Transparency Act", "#" %></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-lighter-purple">
+                    <h2 class="buffer-margin-30">Pharmacy</h2>
+                    <ul class="list-unstyled text-uppercase fjalla-one font-size-110">
+                        <li class="buffer-margin-5"><%= link_to "Our Locations", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Transfer Prescriptions", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Immunization", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "Compounding Service", "#" %></li>
+                        <li class="buffer-margin-5"><%= link_to "HIPPA & Patient Survey", "#" %></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 text-lighter-purple buffer-margin-30">
+                <%= link_to "Capitol Drugs", root_path, class: "text-uppercase fjalla-one text-light-blue font-size-180" %>
+                <div>
+                    Alternative & Traditional Therapies United
+                </div>
+                <ul class="list-unstyled list-inline buffer-margin-15">
+                    <li class="font-size-25px"><%= link_to fa_icon("envelope"), "#" %></li>
+                    <li class="font-size-25px"><%= link_to fa_icon("facebook-official"), "#" %></li>
+                    <li class="font-size-25px"><%= link_to fa_icon("twitter"), "#" %></li>
+                    <li class="font-size-25px"><%= link_to fa_icon("foursquare"), "#" %></li>
+                    <li class="font-size-25px"><%= link_to fa_icon("yelp"), "#" %></li>
+                </ul>
+                <p class="buffer-margin-20 font-size-120">Get our store specials, news & updates.</p>
+                <%= form_tag "#", method: :get do %>
+                    <%= text_field_tag :subscribe, nil, placeholder: "Your email address",  class: "form-control background-darker-purple no-border-radius" %>
+                <% end %>
+                <div class="buffer-margin-30">
+                    <small>Copyright &copy; <%= Date.today.year %> Capitol Drugs. All Rights Reserved.</small>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-1 col-xs-12">
+                <div class="col-xs-12">
+                    <p class="text-purple buffer-padding-30 no-padding-bottom border-top-purple-1 font-size-90">
+                        This internet site is hosted by Living Naturally, a website service provider to natural health stores nationwide. Living Naturally and Capitol Drugs have no means of indepenedently evaluating the safety of functionality of the products offered by their suppliers and affiliates and thus can neither endorse nor recommend products. Information presented is of the general nature for educational and informational purposes only. Statements about the products and health conditions have not been evaluated by the US Food and Drug Administration. Products and information presented herein are not intended to diagnose, treat, cure, or prevent disease. If you have any concerns about your own health, you should always consult with a physician or other healthcare professional. Your use of this site indicates your agreement to be bound by our Terms and Conditions.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</footer>

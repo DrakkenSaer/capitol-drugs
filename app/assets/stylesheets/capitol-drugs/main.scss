@@ -165,40 +165,38 @@ body {
 }
 
 .sidebar-main {
-    @extend .panel-group;
-    @extend .fjalla-one;
-    @extend .text-uppercase;
-    @extend .fjalla-one;
+  @extend .panel-group;
+  @extend .fjalla-one;
+  @extend .text-uppercase;
+
+  .sidebar-panel {
+    @extend .panel;
+    @extend .panel-default;
+    @extend .no-border-radius;
+    @extend .border-lighter-blue-1;
+  }
+  
+  .sidebar-heading {
+    @extend .panel-heading;
+    @extend .background-light-blue;
+    @extend .text-white;
+    @extend .no-border-radius;
     
-    .sidebar-panel {
-        @extend .panel;
-        @extend .panel-default;
-        @extend .no-border-radius;
-        @extend .border-lighter-blue-1;
+    .taxonomy-root h4 {
+      @extend .panel-title;
     }
-    
-    .sidebar-heading {
-        @extend .panel-heading;
-        @extend .background-light-blue;
-        @extend .text-white;
-        @extend .no-border-radius;
-        
-        .taxonomy-root h4 {
-            @extend .panel-title;
-        }
-    }
-    
-    .sidebar-collapse {
-        @extend .panel-collapse;
-        @extend .collapse;
-        @extend .text-blue;
-        @extend .font-size-80;
-    }
-    
-    .toggle-chevron {
-        @extend .pull-right;
-        @extend .text-blue;
-    }
+  }
+  
+  .sidebar-collapse {
+    @extend .panel-collapse;
+    @extend .collapse;
+    @extend .font-size-80;
+  }
+  
+  .toggle-chevron {
+    @extend .pull-right;
+    @extend .text-blue;
+  }
 }
 
 .product-body { 
@@ -218,7 +216,7 @@ body {
   }
 }
 
-.taxon-title {
+.taxon-title, .subtaxon-title {
   @extend .text-uppercase;
   @extend .fjalla-one;
   @extend .text-light-blue;
@@ -229,6 +227,13 @@ body {
 ol.breadcrumb {
   @extend .no-background;
   @extend .text-light-blue;
+}
+
+.list-group-item.active {
+  border: initial;
+
+  @extend .background-light-blue;
+  @extend .text-white;
 }
 
 
