@@ -8,5 +8,13 @@
     <%= f.label :remember_me, Spree.t(:remember_me) %>
   </div>
 
-  <div id="login-submit"><%= f.submit Spree.t(:login), :class => 'btn', :tabindex => 4 %></div>
+  <div id="login-submit">
+    <%= f.submit Spree.t(:login), :class => 'btn', :tabindex => 4 %>
+    
+    <%= Spree.t(:or) %>
+    <span>
+        <%= link_to Spree.t(:create_a_new_account), spree.signup_path %> |
+        <%= link_to Spree.t(:forgot_password), spree.recover_password_path %>
+    </span>
+  </div>
 <% end %>

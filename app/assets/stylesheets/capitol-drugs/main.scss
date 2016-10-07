@@ -132,6 +132,8 @@ body {
     }
     
     #login-submit {
+      @extend .buffer-margin-10;
+      
       input {
         @extend .btn-lg;
         @extend .btn-light-blue;
@@ -140,6 +142,8 @@ body {
         @extend .text-uppercase;
         @extend .fjalla-one;
       }
+      
+      span { @extend .text-light-blue; }
     }
   }
 }

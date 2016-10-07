@@ -8,10 +8,5 @@
     <div class="alert alert-danger"><%= flash[:alert] %></div>
   <% end %>
   <%= render :partial => 'spree/shared/login' %>
-  <div class="text-center">
-    <%= Spree.t(:or) %> 
-        <%= link_to Spree.t(:create_a_new_account), spree.signup_path %> |
-        <%= link_to Spree.t(:forgot_password), spree.recover_password_path %>
-  </div>
   <div data-hook="login_extras"></div>
 </div>
