@@ -236,6 +236,22 @@ ol.breadcrumb {
   @extend .text-white;
 }
 
+#sidebar_products_search {
+  @extend .text-uppercase;
+  @extend .fjalla-one;
+
+  div.navigation {
+    @extend .text-light-blue;
+  }
+  input[type="submit"] {
+    @extend .btn-light-blue;
+    @extend .text-uppercase;
+    @extend .text-white;
+    @extend .no-border-radius;
+    @extend .buffer-padding-20-horizontal;
+  }
+}
+
 
 /* Product show Page */
 
