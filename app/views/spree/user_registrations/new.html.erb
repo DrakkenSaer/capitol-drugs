@@ -11,12 +11,12 @@
       <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
       <p id="register-submit">
         <%= f.submit Spree.t(:create) %>
+        <%= Spree.t(:or) %> 
+        <span>
+          <%= link_to Spree.t(:login_as_existing), spree.login_path %>
+        </span>
       </p>
     </div>
   <% end %>
-  <div class="text-center">
-    <%= Spree.t(:or) %> 
-      <%= link_to Spree.t(:login_as_existing), spree.login_path %>
-  </div>
   <div data-hook="login_extras"></div>
 </div>

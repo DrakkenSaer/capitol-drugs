@@ -111,6 +111,7 @@ body {
         @extend .text-uppercase;
         @extend .fjalla-one;
       }
+      span { @extend .text-light-blue; }
     }
   }
 }
