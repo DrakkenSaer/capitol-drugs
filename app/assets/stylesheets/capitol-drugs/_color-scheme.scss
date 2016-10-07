@@ -113,7 +113,8 @@ $lighter-blue: #DCE7EE;
 .border-left-blue-1 { border-left: solid 1px $blue; }
 
 .border-light-blue-1 { border: solid 1px $light-blue; }
-.border-light-blue-1-important { border: solid 1px $light-blue; }
+.border-light-blue-1-important { border: solid 1px $light-blue !important; }
+.border-top-light-blue-1-important { border-top: solid 1px $light-blue !important; }
 .border-top-light-blue-1 { border-top: solid 1px $light-blue; }
 .border-bottom-light-blue-1 { border-bottom: solid 1px $light-blue; }
 .border-right-light-blue-1 { border-right: solid 1px $light-blue; }
