@@ -10,6 +10,28 @@
 }
 
 
+/* Helpers */
+
+.form-header {
+  @extend .fjalla-one;
+  @extend .text-uppercase;
+  @extend .text-blue;
+}
+
+.form-sub-header {
+  @extend .times-new-roman;
+  @extend .text-light-blue;
+}
+
+.capitol-button-light-blue {
+  @extend .btn-light-blue;
+  @extend .text-white;
+  @extend .no-border-radius;
+  @extend .text-uppercase;
+  @extend .fjalla-one;
+}
+
+
 /* Font CSS */
 
 .fjalla-one:not(i):not(.glyphicon), .fjalla-one *:not(i):not(.glyphicon) { font-family: 'Fjalla One', sans-serif; }
@@ -59,11 +81,8 @@ body {
       @extend .no-border-radius;
       @extend .no-padding;
       @extend .no-border-bottom;
+      @extend .font-size-120;
     }
-  }
-  
-  #logo-text {
-    @include text-vertical-align-middle(60px);
   }
 }
 
@@ -87,14 +106,10 @@ body {
 #signup {
   #signup-title {
     h1 {
-      @extend .fjalla-one;
-      @extend .text-uppercase;
-      @extend .fjalla-one;
-      @extend .text-blue;
+      @extend .form-header
     }
     h4 {
-      @extend .times-new-roman;
-      @extend .text-light-blue;
+      @extend .form-sub-header;
     }
   }
     
@@ -104,13 +119,8 @@ body {
 
     #register-submit {
       input[type=submit] {
-        @extend .btn;
         @extend .btn-lg;
-        @extend .btn-light-blue;
-        @extend .text-white;
-        @extend .no-border-radius;
-        @extend .text-uppercase;
-        @extend .fjalla-one;
+        @extend .capitol-button-light-blue;
       }
       span { @extend .text-light-blue; }
     }
@@ -119,10 +129,7 @@ body {
 
 #login {
   #login-title h1 {
-    @extend .text-blue;
-    @extend .fjalla-one;
-    @extend .text-uppercase;
-    @extend .fjalla-one;
+    @extend .form-header;
   }
   
   #existing-customer {
@@ -138,11 +145,7 @@ body {
       
       input {
         @extend .btn-lg;
-        @extend .btn-light-blue;
-        @extend .text-white;
-        @extend .no-border-radius;
-        @extend .text-uppercase;
-        @extend .fjalla-one;
+        @extend .capitol-button-light-blue;
       }
       
       span { @extend .text-light-blue; }
@@ -250,11 +253,8 @@ ol.breadcrumb {
     @extend .text-light-blue;
   }
   input[type="submit"] {
-    @extend .btn-light-blue;
-    @extend .text-uppercase;
-    @extend .text-white;
-    @extend .no-border-radius;
-    @extend .buffer-padding-20-horizontal;
+    @extend .capitol-button-light-blue;
+    @extend .btn-lg;
   }
 }
 
@@ -300,7 +300,6 @@ ol.breadcrumb {
       @extend .buffer-margin-10;
       
       #variant-select {
-        @extend .text-uppercase;
         @extend .no-border-radius;
         @extend .border-blue-1;
         @extend .text-blue;
@@ -394,7 +393,52 @@ ol.breadcrumb {
 }
 
 
-/* ============= Gem Modifications ============== */
+/* ============ Cart Form ============= */
+
+#cart {
+  h1 {
+    @extend .form-header;
+  }
+
+  #cart-detail {
+    tr.active {
+      @extend .text-light-blue;
+      @extend .raleway;
+    }
+  }
+}
+
+
+
+/* ============ Review Form ============= */
+
+.new-review-title {
+  @extend .form-header;
+}
+.new_review {
+  @extend .col-md-7;
+  @extend .row;
+  @extend .text-light-blue;
+  
+  input, textarea { 
+    @extend .no-border-radius; 
+  }
+  input[type="submit"] {
+    @extend .btn-lg;
+    @extend .capitol-button-light-blue;
+  }
+}
+
+
+/* ============== Checkout ============== */
+
+#checkout {
+  
+}
+
+
+
+/* ============= Gem Global Modifications ============== */
 
 
 /* Social Nav */

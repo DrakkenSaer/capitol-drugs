@@ -23,6 +23,9 @@
 database.yml
 doc/
 *.swp
+*.sql
+*.sqlite3
+*.csv
 *~
 .project
 .DS_Store
