@@ -27,7 +27,7 @@ gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
 
 # Spree Extensions
-gem 'spree_multi_domain', github: 'spree-contrib/spree-multi-domain', branch: '3-1-stable'
+gem 'spree_multi_domain', github: 'DrakkenSaer/spree-multi-domain', branch: '3-1-stable'
 gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: 'master'
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '3-1-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-1-stable'
