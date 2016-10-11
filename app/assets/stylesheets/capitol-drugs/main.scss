@@ -88,14 +88,22 @@ body {
 
 
 #edit-profile {
-  .panel { @extend .panel-light-blue; }
-  
-  input, select {
-    @extend .input-lg;
-    @extend .text-light-blue;
-    @extend .border-light-blue-1;
-    @extend .no-border-radius;
-    @extend .buffer-margin-10;
+  .panel { 
+    @extend .panel-light-blue;
+    
+    input, select {
+      @extend .input-lg;
+      @extend .text-light-blue;
+      @extend .border-light-blue-1;
+      @extend .no-border-radius;
+      @extend .buffer-margin-10;
+    }
+    input[type="submit"] {
+      @extend .btn-light-blue;
+      @extend .text-white;
+      @extend .fjalla-one;
+      @extend .text-uppercase;
+    }
   }
 }
 
