@@ -16,26 +16,40 @@ $lighter-blue: #DCE7EE;
 
 /* ===================== Textual Color ===================== */
 
+.placeholder-purple { @include input-placeholder { color: $purple !important }; }
+.placeholder-light-purple { @include input-placeholder { color: $light-purple !important }; }
+.placeholder-lighter-purple { @include input-placeholder { color: $lighter-purple !important }; }
+.placeholder-dark-purple { @include input-placeholder { color: $dark-purple !important }; }
+.placeholder-darker-purple { @include input-placeholder { color: $darker-purple !important }; }
+
+.placeholder-blue { @include input-placeholder { color: $blue !important }; }
+.placeholder-light-blue { @include input-placeholder { color: $light-blue !important }; }
+.placeholder-lighter-blue { @include input-placeholder { color: $lighter-blue !important }; }
+.placeholder-dark-blue { @include input-placeholder { color: $dark-blue !important }; }
+.placeholder-darker-blue { @include input-placeholder { color: $darker-blue !important }; }
+
 .text-white, .text-white *  { color: white !important; }
 
-.text-purple, .text-purple *  { color: $purple; @include input-placeholder { color: $purple !important }; }
-.text-light-purple, .text-light-purple *  { color: $light-purple; @include input-placeholder { color: $light-purple !important }; }
-.text-light-purple-important, .text-light-purple-important *  { color: $light-purple !important; @include input-placeholder { color: $light-purple !important }; }
-.text-lighter-purple, .text-lighter-purple *  { color: $lighter-purple; @include input-placeholder { color: $lighter-purple !important }; }
-.text-lighter-purple-important, .text-lighter-purple-important *  { color: $lighter-purple !important; @include input-placeholder { color: $lighter-purple !important }; }
-.text-dark-purple, .text-dark-purple *  { color: $dark-purple; @include input-placeholder { color: $dark-purple !important }; }
-.text-darker-purple, .text-darker-purple *  { color: $darker-purple; @include input-placeholder { color: $darker-purple !important }; }
+.text-purple, .text-purple *  { color: $purple; }
+.text-light-purple, .text-light-purple *  { color: $light-purple; }
+.text-light-purple-important, .text-light-purple-important *  { color: $light-purple !important; }
+.text-lighter-purple, .text-lighter-purple *  { color: $lighter-purple; }
+.text-lighter-purple-important, .text-lighter-purple-important *  { color: $lighter-purple !important; }
+.text-dark-purple, .text-dark-purple *  { color: $dark-purple; }
+.text-darker-purple, .text-darker-purple *  { color: $darker-purple; }
 
-.text-blue, .text-blue *  { color: $blue !important; @include input-placeholder { color: $blue !important; }; }
-.text-light-blue, .text-light-blue *  { color: $light-blue !important; @include input-placeholder { color: $light-blue !important; }; }
-.text-lighter-blue, .text-lighter-blue *  { color: $lighter-blue; @include input-placeholder { color: $lighter-blue !important; }; }
-.text-dark-blue, .text-dark-blue *  { color: $dark-blue; @include input-placeholder { color: $dark-blue !important; }; }
-.text-darker-blue, .text-darker-blue *  { color: $darker-blue; @include input-placeholder { color: $darker-blue !important }; }
+.text-blue, .text-blue *  { color: $blue }
+.text-blue-important, .text-blue-important *  { color: $blue !important; }
+.text-light-blue, .text-light-blue *  { color: $light-blue; }
+.text-light-blue-important, .text-light-blue-important *  { color: $light-blue !important; }
+.text-lighter-blue, .text-lighter-blue *  { color: $lighter-blue; }
+.text-dark-blue, .text-dark-blue *  { color: $dark-blue; }
+.text-darker-blue, .text-darker-blue *  { color: $darker-blue; }
 
-
+/*
 .input-text-light-blue input, select, textarea { color: $light-blue !important; }
 .input-text-light-blue textarea:focus, input:focus { color: $light-blue !important; }
-
+*/
 
 /* ===================== Background Colors ===================== */
 
@@ -151,3 +165,21 @@ $lighter-blue: #DCE7EE;
 /* ================ Bootstrap Overrides ================ */
 
 
+/* Panels */
+
+.panel-light-blue {
+  @extend .border-light-blue-1;
+  @extend .no-border-radius;
+  
+  .panel-heading {
+    @extend .background-light-blue;
+    @extend .no-border-radius;
+    @extend .text-white;
+    
+    .panel-title {
+      @extend .fjalla-one;
+      @extend .text-uppercase;
+      @extend .font-size-130;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/DrakkenSaer/spree-multi-domain.git
-  revision: d146e4b598d035480f765df9244215c9399e0084
+  revision: 7fdd4e788ce8ba4c3e454420c3bc0b5e0f9db777
   branch: 3-1-stable
   specs:
     spree_multi_domain (3.2.0.alpha)

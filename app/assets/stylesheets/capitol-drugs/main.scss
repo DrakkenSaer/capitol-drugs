@@ -87,23 +87,34 @@ body {
 }
 
 
-/* Account Login & Registration Pages */
-
-#password-credentials {
-  @extend .buffer-padding-10;
+#edit-profile {
+  .panel { @extend .panel-light-blue; }
   
-  input {
+  input, select {
     @extend .input-lg;
-    @extend .times-new-roman;
     @extend .text-light-blue;
     @extend .border-light-blue-1;
     @extend .no-border-radius;
     @extend .buffer-margin-10;
-    @extend .no-margin-top;
-  } 
+  }
 }
 
+/* Account Login & Registration Pages */
+
 #signup {
+  #password-credentials {
+    @extend .buffer-padding-10;
+    
+    input {
+      @extend .input-lg;
+      @extend .text-light-blue;
+      @extend .border-light-blue-1;
+      @extend .no-border-radius;
+      @extend .buffer-margin-10;
+      @extend .no-margin-top;
+    } 
+  }
+
   #signup-title {
     h1 {
       @extend .form-header
@@ -173,38 +184,19 @@ body {
   }
 }
 
-.sidebar-main {
-  @extend .panel-group;
-  @extend .fjalla-one;
-  @extend .text-uppercase;
+#taxonomies {
+  .panel { @extend .panel-light-blue; }
+  
+  .panel-title { @extend .buffer-padding-5; }
 
-  .sidebar-panel {
-    @extend .panel;
-    @extend .panel-default;
-    @extend .no-border-radius;
-    @extend .border-lighter-blue-1;
-  }
-  
-  .sidebar-heading {
-    @extend .panel-heading;
-    @extend .background-light-blue;
-    @extend .text-white;
-    @extend .no-border-radius;
-    
-    .taxonomy-root h4 {
-      @extend .panel-title;
-    }
-  }
-  
-  .sidebar-collapse {
-    @extend .panel-collapse;
-    @extend .collapse;
+  .panel-collapse {
+    @extend .fjalla-one;
+    @extend .text-uppercase;
     @extend .font-size-80;
   }
   
   .toggle-chevron {
     @extend .pull-right;
-    @extend .text-blue;
   }
 }
 

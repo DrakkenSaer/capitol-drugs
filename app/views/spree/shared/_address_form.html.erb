@@ -10,7 +10,7 @@
       <div class="panel-body">
         <%= f.fields_for "#{address_type[0..3]}_address", (@user.send("#{address_type[0..3]}_address") || Spree::Address.default(@user, "#{address_type[0..3]}")) do |form| %>
           <% form.object ||= Spree::Address.new(country: Spree::Country.new) %>
-          <%= render partial: 'spree/admin/shared/address_form', locals: { f: form, type: "#{address_type}" } %>
+          <%= render partial: 'spree/address/form', locals: { form: form, address_type: "#{address_type}", address: form.object } %>
           <p>
             <%= f.submit Spree.t(:update), :class => 'btn btn-primary' %>
           </p>

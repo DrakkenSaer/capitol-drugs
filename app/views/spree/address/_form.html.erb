@@ -1,0 +1,62 @@
+<% address_id = address_type.chars.first %>
+
+<div class="inner" data-hook=<%="#{address_type}_inner" %>>
+  <p class="form-group" id=<%="#{address_id}firstname" %>>
+    <%= form.text_field :firstname, placeholder: Spree.t(:first_name), class: 'form-control required' %>
+  </p>
+  <p class="form-group" id=<%="#{address_id}lastname" %>>
+    <%= form.text_field :lastname, placeholder: Spree.t(:last_name), class: 'form-control required' %>
+  </p>
+  <% if Spree::Config[:company] %>
+    <p class="form-group" id=<%="#{address_id}company" %>>
+      <%= form.text_field :company, placeholder: Spree.t(:company), class: 'form-control' %>
+    </p>
+  <% end %>
+  <p class="form-group" id=<%="#{address_id}address1" %>>
+    <%= form.text_field :address1, placeholder: Spree.t(:street_address), class: 'form-control  required' %>
+  </p>
+  <p class="form-group" id=<%="#{address_id}address2" %>>
+    <%= form.text_field :address2, placeholder: Spree.t(:street_address_2), class: 'form-control' %>
+  </p>
+  <p class="form-group" id=<%="#{address_id}city" %>>
+    <%= form.text_field :city, placeholder: Spree.t(:city), class: 'form-control required' %>
+  </p>
+  <p class="form-group" id=<%="#{address_id}country" %>>
+    <span id=<%="#{address_id}country-selection" %>>
+      <%= form.collection_select :country_id, available_countries, :id, :name, {include_blank: 'Select ' + Spree.t(:country)}, {class: 'form-control required'} %>
+    </span>
+  </p>
+
+  <% if Spree::Config[:address_requires_state] %>
+    <p class="form-group" id=<%="#{address_id}state" %>>
+      <% have_states = !address.country.states.empty? %>
+
+      <%== state_elements = [
+         form.collection_select(:state_id, address.country.states,
+                            :id, :name,
+                            {include_blank: 'Select ' + Spree.t(:state)},
+                            {class: have_states ? 'form-control required' : 'form-control hidden',
+                            disabled: !have_states}) +
+         form.text_field(:state_name,
+                            class: !have_states ? 'form-control required' : 'form-control hidden',
+                            disabled: have_states)
+         ].join.gsub('"', "'").gsub("\n", "")
+      %>
+    </p>
+      <noscript>
+        <%= form.text_field :state_name, class: 'form-control required' %>
+      </noscript>
+  <% end %>
+
+  <p class="form-group" id=<%="#{address_id}zipcode" %>>
+    <%= form.text_field :zipcode, placeholder: Spree.t(:zip), class: "form-control #{'required' if address.require_zipcode?}" %>
+  </p>
+  <p class="form-group" id=<%="#{address_id}phone" %>>
+    <%= form.phone_field :phone, placeholder: Spree.t(:phone), class: "form-control #{'required' if address.require_phone?}" %>
+  </p>
+  <% if Spree::Config[:alternative_shipping_phone] %>
+    <p class="form-group" id=<%="#{address_id}altphone" %>>
+      <%= form.phone_field :alternative_phone, placeholder: Spree.t(:alternative_phone), class: 'form-control' %>
+    </p>
+  <% end %>
+</div>

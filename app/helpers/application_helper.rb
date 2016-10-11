@@ -6,6 +6,6 @@ module ApplicationHelper
     
     # Usage: <%= user_email_or_name(@user) %>
     def user_email_or_name(user)
-       user.bill_address ? user.bill_address.firstname : user.email 
+       user.firstname ? user.firstname : user.email 
     end
 end

@@ -13,7 +13,7 @@
       <%= render partial: 'spree/shared/capitol-drugs/header' %>
     <% end %>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="<%= @container_id || 'container-default' %>">
       <div class="row" data-hook>
         <%= breadcrumbs(@taxon) %>
 
