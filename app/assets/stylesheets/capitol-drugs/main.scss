@@ -10,28 +10,6 @@
 }
 
 
-/* Helpers */
-
-.form-header {
-  @extend .fjalla-one;
-  @extend .text-uppercase;
-  @extend .text-blue;
-}
-
-.form-sub-header {
-  @extend .times-new-roman;
-  @extend .text-light-blue;
-}
-
-.capitol-button-light-blue {
-  @extend .btn-light-blue;
-  @extend .text-white;
-  @extend .no-border-radius;
-  @extend .text-uppercase;
-  @extend .fjalla-one;
-}
-
-
 /* Font CSS */
 
 .fjalla-one:not(i):not(.glyphicon), .fjalla-one *:not(i):not(.glyphicon) { font-family: 'Fjalla One', sans-serif; }
@@ -50,10 +28,13 @@ a {
   }
 }
 
+.btn { @extend .no-border-radius; }
+
 
 /* Form CSS */
 
 textarea { resize: vertical; }
+input, select, textarea { @extend .no-border-radius; }
 
 
 /* Layout CSS */
@@ -78,7 +59,6 @@ body {
       @extend .col-xs-12;
       @extend .btn;
       @extend .btn-blue;
-      @extend .no-border-radius;
       @extend .no-padding;
       @extend .no-border-bottom;
       @extend .font-size-120;
@@ -87,113 +67,72 @@ body {
 }
 
 
-#edit-profile {
-  .panel { 
-    @extend .panel-light-blue;
-    
-    input, select {
-      @extend .input-lg;
-      @extend .text-light-blue;
-      @extend .border-light-blue-1;
-      @extend .no-border-radius;
-      @extend .buffer-margin-10;
+
+/* Account Login & Registration/Forgot Password Pages */
+
+#signup, #login {
+  #signup-title, #login-title {
+    h1 {
+      @include form-header(blue);
     }
-    input[type="submit"] {
-      @extend .btn-light-blue;
-      @extend .text-white;
-      @extend .fjalla-one;
-      @extend .text-uppercase;
+    h4 {
+      @include form-sub-header(light-blue);
     }
   }
-}
 
-/* Account Login & Registration Pages */
-
-#signup {
   #password-credentials {
     @extend .buffer-padding-10;
     
     input {
       @extend .input-lg;
-      @extend .text-light-blue;
-      @extend .border-light-blue-1;
-      @extend .no-border-radius;
-      @extend .buffer-margin-10;
-      @extend .no-margin-top;
+      @include capitol-input-field(light-blue);
     } 
   }
-
-  #signup-title {
-    h1 {
-      @extend .form-header
-    }
-    h4 {
-      @extend .form-sub-header;
-    }
-  }
     
-  #new-customer {
+  #new-customer, #existing-customer {
     @extend .col-md-5;
     @extend .no-padding;
 
-    #register-submit {
-      input[type=submit] {
-        @extend .btn-lg;
-        @extend .capitol-button-light-blue;
-      }
-      span { @extend .text-light-blue; }
-    }
-  }
-}
+    #login-remember-me { @extend .text-light-blue; }
 
-#login {
-  #login-title h1 {
-    @extend .form-header;
-  }
-  
-  #existing-customer {
-    @extend .col-md-5;
-    @extend .no-padding;
-
-    #login-remember-me {
-      label { @extend .text-light-blue; }
-    }
-    
-    #login-submit {
+    #register-submit, #login-submit {
       @extend .buffer-margin-10;
       
-      input {
+      input[type="submit"] {
         @extend .btn-lg;
-        @extend .capitol-button-light-blue;
+        @include capitol-button(light-blue);
       }
-      
       span { @extend .text-light-blue; }
     }
   }
 }
 
+#forgot-password {
+  @extend .text-light-blue;
+
+  .panel { @include panel(light-blue); }
+}
 
 /* Products Index Page */
 
 .pagination {
   li {
     a {
-        @extend .buffer-margin-5-horizontal;
-        @extend .fjalla-one;
-        @extend .border-lighter-blue-1-important;
-        @extend .text-light-blue;
-        @extend .no-border-radius;
+      @extend .buffer-margin-5-horizontal;
+      @extend .fjalla-one;
+      @extend .border-lighter-blue-1-important;
+      @extend .text-light-blue;
     }
 
     &.active a {
-        @extend .text-white;
-        @extend .background-lighter-blue;
+      @extend .text-white;
+      @extend .background-lighter-blue;
     }
   }
 }
 
 #taxonomies {
-  .panel { @extend .panel-light-blue; }
+  .panel { @include panel(light-blue); }
   
   .panel-title { @extend .buffer-padding-5; }
 
@@ -253,10 +192,11 @@ ol.breadcrumb {
     @extend .text-light-blue;
   }
   input[type="submit"] {
-    @extend .capitol-button-light-blue;
+    @include capitol-button(light-blue);
     @extend .btn-lg;
   }
 }
+
 
 
 /* Product show Page */
@@ -393,11 +333,34 @@ ol.breadcrumb {
 }
 
 
-/* ============ Cart Form ============= */
+
+/* User Edit */
+
+#edit-profile {
+  .panel { 
+    @include panel(light-blue);
+    
+    input, select {
+      @extend .input-lg;
+      @include capitol-input-field(light-blue);
+    }
+    input[type="submit"] {
+      @include capitol-button(light-blue);
+    }
+  }
+}
+
+
+
+/* Cart Form */
 
 #cart {
   h1 {
-    @extend .form-header;
+    @include form-header(blue);
+  }
+  
+  #content {
+    .btn { @extend .btn-blue; @extend .text-white; }
   }
 
   #cart-detail {
@@ -405,15 +368,17 @@ ol.breadcrumb {
       @extend .text-light-blue;
       @extend .raleway;
     }
+    a { @extend .link-blue-light-purple-important; }
+    .lead { @extend .text-blue; }
   }
 }
 
 
 
-/* ============ Review Form ============= */
+/* Review Form */
 
 .new-review-title {
-  @extend .form-header;
+  @include form-header(blue);
 }
 .new_review {
   @extend .col-md-7;
@@ -425,16 +390,24 @@ ol.breadcrumb {
   }
   input[type="submit"] {
     @extend .btn-lg;
-    @extend .capitol-button-light-blue;
+    @include capitol-button(light-blue);
   }
 }
 
 
-/* ============== Checkout ============== */
+/* Checkout */
 
 #checkout {
   
 }
+
+#checkout-registration {
+  h1 { @include form-header(blue); }
+  #registration { 
+    .panel { @include panel(light-blue); }
+  }
+}
+
 
 
 

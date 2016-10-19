@@ -156,6 +156,8 @@
 
 .border-shadow-outter-15 { @include box-shadow(0px 0px 15px 0px rgba(0,0,0,0.4)); }
 .border-shadow-inner-top { @include box-shadow(inset 0 7px 9px -7px rgba(0,0,0,0.4)); }
+.no-box-shadow { @include box-shadow(none); }
+.no-outline { outline: none; }
 
 .scroll-vertically { overflow-y: scroll; }
 

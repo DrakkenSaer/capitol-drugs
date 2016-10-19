@@ -12,21 +12,40 @@ $darker-blue: #142B49;
 $light-blue: #A6C4E2;
 $lighter-blue: #DCE7EE;
 
+@mixin form-header($color) {
+  @extend .fjalla-one;
+  @extend .text-uppercase;
+  @extend .text-#{$color};
+}
+
+@mixin form-sub-header($color) {
+  @extend .times-new-roman;
+  @extend .text-#{$color};
+}
+
+@mixin capitol-input-field($color) {
+  @extend .text-#{$color};
+  @extend .border-#{$color}-1;
+  @extend .no-border-radius;
+  @extend .buffer-margin-10;
+}
+
+@mixin capitol-button($color) {
+  @extend .btn-#{$color};
+  @extend .text-white;
+  @extend .no-border-radius;
+  @extend .text-uppercase;
+  @extend .fjalla-one;
+}
 
 
 /* ===================== Textual Color ===================== */
 
-.placeholder-purple { @include input-placeholder { color: $purple !important }; }
-.placeholder-light-purple { @include input-placeholder { color: $light-purple !important }; }
-.placeholder-lighter-purple { @include input-placeholder { color: $lighter-purple !important }; }
-.placeholder-dark-purple { @include input-placeholder { color: $dark-purple !important }; }
-.placeholder-darker-purple { @include input-placeholder { color: $darker-purple !important }; }
+.link-dark-purple, .link-dark-purple * { @include link-colors($blue, $light-purple, $light-purple, $blue, $light-purple); }
+.link-blue-light-purple-important, .link-blue-light-purple-important * { @include link-colors($blue !important, $light-purple !important, $light-purple !important, $blue !important, $light-purple !important); }
+.link-lighter-purple, .link-lighter-purple * { @include link-colors($lighter-purple, white, white, $lighter-purple, white); }
+.link-blue-white-important, .link-blue-white-important * { @include link-colors($blue !important, white !important, white !important, $blue !important, white !important); }
 
-.placeholder-blue { @include input-placeholder { color: $blue !important }; }
-.placeholder-light-blue { @include input-placeholder { color: $light-blue !important }; }
-.placeholder-lighter-blue { @include input-placeholder { color: $lighter-blue !important }; }
-.placeholder-dark-blue { @include input-placeholder { color: $dark-blue !important }; }
-.placeholder-darker-blue { @include input-placeholder { color: $darker-blue !important }; }
 
 .text-white, .text-white *  { color: white !important; }
 
@@ -53,10 +72,8 @@ $lighter-blue: #DCE7EE;
 
 /* ===================== Background Colors ===================== */
 
-.background-dark-blue-gradient {
-    @include filter-gradient(#3d4878, #7981a2, vertical);
-    @include background-image(linear-gradient(top, $blue 0%, rgba(121,129,162,0) 40%, rgba(255,255,255,0) 100%));
-}
+.background-light-blue-hover-important:hover { background-color: $light-blue !important; }
+
 
 .background-purple { background-color: $purple !important; }
 .background-dark-purple { background-color: $dark-purple !important; }
@@ -167,12 +184,19 @@ $lighter-blue: #DCE7EE;
 
 /* Panels */
 
-.panel-light-blue {
-  @extend .border-light-blue-1;
+@mixin panel($color) {
+  @extend .border-#{$color}-1;
   @extend .no-border-radius;
   
+  .btn { @include capitol-button($color) }
+
+  input { 
+    @extend .input-lg;
+    @include capitol-input-field($color);
+  }
+  
   .panel-heading {
-    @extend .background-light-blue;
+    @extend .background-#{$color};
     @extend .no-border-radius;
     @extend .text-white;
     

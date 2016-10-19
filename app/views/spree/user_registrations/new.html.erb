@@ -10,7 +10,7 @@
     <div data-hook="signup_inside_form">
       <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
       <p id="register-submit">
-        <%= f.submit Spree.t(:create) %>
+        <%= f.submit Spree.t(:create), class: "btn" %>
         <%= Spree.t(:or) %> 
         <span>
           <%= link_to Spree.t(:login_as_existing), spree.login_path %>
