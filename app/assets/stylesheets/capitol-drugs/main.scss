@@ -334,7 +334,44 @@ ol.breadcrumb {
 
 
 
-/* User Edit */
+/* User Edit & Show */
+
+#account-summary-details {
+  a { @extend .link-light-purple; }
+  .account-summary-subtitle { @extend .text-light-purple; }
+  .account-summary-title { 
+    @extend .text-blue;
+    @extend .text-uppercase;
+    @extend .fjalla-one;
+  }
+  .account-summary-info-title {
+    @extend .text-uppercase;
+    @extend .fjalla-one;
+    
+    span { @extend .text-blue; }
+    small { @extend .link-light-purple; }
+  }
+  .account-summary {
+    @extend .font-size-130;
+    
+    ul li {
+      @extend .text-light-blue;
+    }
+  }
+  
+  .account-my-orders thead {
+    @extend .text-light-blue;
+  }
+  
+  #account-summary-message span {
+    @extend .background-light-purple;
+    @extend .buffer-padding-10;
+    @extend .buffer-padding-20-horizontal;
+    @extend .text-white;
+    @extend .text-capitalize;
+    @extend .font-size-120;
+  }
+}
 
 #edit-profile {
   .panel { 
@@ -395,11 +432,7 @@ ol.breadcrumb {
 }
 
 
-/* Checkout */
-
-#checkout {
-  
-}
+/* Checkout Path */
 
 #checkout-registration {
   h1 { @include form-header(blue); }
@@ -407,7 +440,6 @@ ol.breadcrumb {
     .panel { @include panel(light-blue); }
   }
 }
-
 
 
 
@@ -426,4 +458,15 @@ ol.breadcrumb {
 
 .star-rating {
   @extend .buffer-margin-5-horizontal;
+}
+
+
+/* Bootstrap Overrides */
+
+.text-primary { @extend .text-blue; }
+.btn-success { @extend .btn-blue; }
+.nav-pills > li {
+  &> a { @extend .no-border-radius; }
+  &:not(.active) > a { @extend .text-blue; }
+  &.active > a { @extend .background-blue; }
 }

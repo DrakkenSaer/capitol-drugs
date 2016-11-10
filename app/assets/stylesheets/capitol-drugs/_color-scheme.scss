@@ -43,6 +43,7 @@ $lighter-blue: #DCE7EE;
 
 .link-dark-purple, .link-dark-purple * { @include link-colors($blue, $light-purple, $light-purple, $blue, $light-purple); }
 .link-blue-light-purple-important, .link-blue-light-purple-important * { @include link-colors($blue !important, $light-purple !important, $light-purple !important, $blue !important, $light-purple !important); }
+.link-light-purple, .link-light-purple * { @include link-colors($light-purple, $lighter-purple, $lighter-purple, $light-purple, $lighter-purple); }
 .link-lighter-purple, .link-lighter-purple * { @include link-colors($lighter-purple, white, white, $lighter-purple, white); }
 .link-blue-white-important, .link-blue-white-important * { @include link-colors($blue !important, white !important, white !important, $blue !important, white !important); }
 
