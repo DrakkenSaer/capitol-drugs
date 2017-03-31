@@ -27,7 +27,7 @@ gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
 
 # Spree Extensions
-gem 'spree_multi_domain', github: 'DrakkenSaer/spree-multi-domain', branch: '3-1-stable'
+gem 'spree_multi_domain', github: 'DrakkenSaer/spree-multi-domain', branch: 'master'
 gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: 'master'
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '3-1-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-1-stable'
@@ -58,7 +58,7 @@ group :doc do
 end
 
 group :production do
-  # User Rack Timeout to tell Puma when to timeout requests
+  # Use Rack Timeout to tell Puma when to timeout requests
   gem "rack-timeout"
 
   gem 'pg'
