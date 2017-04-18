@@ -13,7 +13,7 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
-  country = Spree::Country.find_by_name('United States')
+  country = Spree::Country.find_by_name('United States') if ActiveRecord::Base.connection.data_source_exists? 'countries'
   config.default_country_id = country.id if country.present?
 end
 
