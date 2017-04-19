@@ -51,6 +51,9 @@ group :development, :test do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # Use Pry to inspect dynamic and ghost methods which are created at runtime
+  gem 'pry-rails'
 end
 
 group :doc do

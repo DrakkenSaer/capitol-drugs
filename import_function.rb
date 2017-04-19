@@ -21,37 +21,41 @@ def import_taxonomies(hash)
     end
 end
 
-xls = Roo::Spreadsheet.open('t.xls')
-sheet = xls.sheet(0)
-
-sheet.each_with_index(name: 'Name/Item_Size/Form', 
-                        sku: 'CDI_Sku', 
-                        price: 'Everyday_Price', 
-                        upc: 'UPC_Code',
-                        brand: 'Brand', 
-                        category: 'Category', 
-                        sub_category: 'Sub_Category') do |hash, index|
-
-    next if index == 0
-
-    query = { name: hash[:name].titleize,
-              sku: hash[:sku],
-              price: hash[:price], 
-              shipping_category: Spree::ShippingCategory.find_or_create_by!(name: 'Default') }
-
-    taxons = hash.slice(:brand, :category, :sub_category)
-    import_taxonomies(taxons)
-
-    product = Spree::Product.find_by(name: query[:name])
-    if product.present?
-        product.assign_attributes(query)
-        product.update!(query) if product.changed?
-    else
-        product = Spree::Product.create!(query)
-    end
-
-    taxons.map do |key, value|
-        taxon = Spree::Taxon.find_by_name(value.titleize)
-        taxon.products << product unless taxon.products.include? product
+def import_spreadsheet(sheet)
+    sheet.each_with_index(name: 'Name/Item_Size/Form', 
+                            sku: 'CDI_Sku', 
+                            price: 'Everyday_Price', 
+                            upc: 'UPC_Code',
+                            brand: 'Brand', 
+                            category: 'Category', 
+                            sub_category: 'Sub_Category') do |hash, index|
+    
+        next if index == 0
+    
+        query = { name: hash[:name].titleize,
+                  sku: hash[:sku],
+                  price: hash[:price], 
+                  shipping_category: Spree::ShippingCategory.find_or_create_by!(name: 'Default') }
+    
+        taxons = hash.slice(:brand, :category, :sub_category)
+        import_taxonomies(taxons)
+    
+        product = Spree::Product.find_by(name: query[:name])
+        if product.present?
+            product.assign_attributes(query)
+            product.update!(query) if product.changed?
+        else
+            product = Spree::Product.create!(query)
+        end
+    
+        taxons.map do |key, value|
+            taxon = Spree::Taxon.find_by_name(value.titleize)
+            taxon.products << product unless taxon.products.include? product
+        end
     end
 end
+
+
+xls = Roo::Spreadsheet.open('t.xls')
+sheet = xls.sheet(0)
+import_spreadsheet(sheet)
