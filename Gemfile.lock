@@ -10,6 +10,14 @@ GIT
       spree_frontend (>= 3.1.0, < 4.0)
 
 GIT
+  remote: git://github.com/DrakkenSaer/spree_tags.git
+  revision: 3ae28f0a53ffebc8e81cf08b4b036124c5d5d989
+  branch: 3-1-stable
+  specs:
+    spree_tags (3.1.0)
+      spree_core (~> 3.1.0)
+
+GIT
   remote: git://github.com/spree-contrib/spree_reviews.git
   revision: 49d86afa3c12f3ab6b0f900665822c738928a685
   branch: 3-1-stable
@@ -65,12 +73,6 @@ GIT
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-
-PATH
-  remote: ../spree_tags
-  specs:
-    spree_tags (3.1.0)
-      spree_core (~> 3.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -220,7 +222,7 @@ GEM
     minitest (5.10.1)
     monetize (1.6.0)
       money (~> 6.8)
-    money (6.8.3)
+    money (6.8.4)
       i18n (>= 0.6.4, < 0.9)
       sixarm_ruby_unaccent (>= 1.1.1, < 2)
     multi_json (1.12.1)
