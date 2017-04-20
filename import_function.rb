@@ -54,8 +54,3 @@ def import_spreadsheet(sheet)
         end
     end
 end
-
-
-xls = Roo::Spreadsheet.open('t.xls')
-sheet = xls.sheet(0)
-import_spreadsheet(sheet)
