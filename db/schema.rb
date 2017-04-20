@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206223752) do
+ActiveRecord::Schema.define(version: 20170420060836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -989,6 +989,26 @@ ActiveRecord::Schema.define(version: 20170206223752) do
   add_index "spree_stores", ["code"], name: "index_spree_stores_on_code", using: :btree
   add_index "spree_stores", ["default"], name: "index_spree_stores_on_default", using: :btree
   add_index "spree_stores", ["url"], name: "index_spree_stores_on_url", using: :btree
+
+  create_table "spree_taggings", force: :cascade do |t|
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tag_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "spree_taggings", ["tag_id"], name: "index_spree_taggings_on_tag_id", using: :btree
+  add_index "spree_taggings", ["taggable_type", "taggable_id"], name: "index_spree_taggings_on_taggable_type_and_taggable_id", using: :btree
+
+  create_table "spree_tags", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "color"
+    t.boolean  "display",     default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "spree_tax_categories", force: :cascade do |t|
     t.string   "name"
