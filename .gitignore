@@ -20,6 +20,7 @@
 /spring-1000
 
 # Ignore other unneeded files.
+*.log
 database.yml
 doc/
 *.swp
