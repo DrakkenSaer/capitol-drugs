@@ -62,4 +62,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+    namespace :api do
+      post 'import/csv' => 'import#import_csv_handler'
+    end
 end
