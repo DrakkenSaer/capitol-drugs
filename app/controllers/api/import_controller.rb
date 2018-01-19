@@ -2,12 +2,7 @@ class ImportController < ApplicationController
     def import_csv_handler
         logger.debug "#{params}"
 
-        begin
-            import_csv(params[:spreadsheet])
-            render plain: "OK"
-        rescue => e
-            render plain: e
-        end
+        render plain: "OK"
     end
 
     private
