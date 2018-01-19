@@ -1,5 +1,6 @@
 class ImportController < ApplicationController
     def import_csv_handler
+        logger.debug "#{params}"
 
         begin
             import_csv(params[:spreadsheet])
@@ -11,6 +12,6 @@ class ImportController < ApplicationController
 
     private
         def import_params
-            params.require(:notification).permit(:spreadsheet)
+            params.permit(:spreadsheet)
         end
 end
