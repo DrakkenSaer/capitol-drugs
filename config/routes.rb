@@ -64,6 +64,8 @@ Rails.application.routes.draw do
   #   end
 
     namespace :api do
-      post 'import/csv' => 'import#import_csv_handler'
+
+get '*pages', to: 'pages#show', format: true
+      post 'import/csv', to: :import_csv_handler, controller: 'api/import'
     end
 end
