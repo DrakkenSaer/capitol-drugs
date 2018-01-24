@@ -2,6 +2,8 @@ class Api::V1::ImportController < ApiController
   protect_from_forgery with: :null_session
 
   def csv
+    logger.debug "#{params}"
+
     importUtil = Utils::ImportUtil.new
 
     if importUtil.import_csv(params[:spreadsheet])
