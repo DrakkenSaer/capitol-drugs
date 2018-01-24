@@ -13,6 +13,6 @@ class Api::V1::ImportController < ApiController
 
   private
     def import_params
-        params.permit(:spreadsheet)
+        params.permit!
     end
 end
