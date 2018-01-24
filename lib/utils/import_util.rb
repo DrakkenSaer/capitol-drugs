@@ -50,7 +50,7 @@ class Utils::ImportUtil
             query = { name: row[:name].titleize,
                     sku: row[:sku],
                     price: row[:price], 
-                    upc: row[:upc],
+                    # upc: row[:upc],
                     description: row[:description],
                     shipping_category: Spree::ShippingCategory.find_or_create_by!(name: 'Default'),
                     available_on: DateTime.now }
