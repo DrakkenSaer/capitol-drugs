@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      post 'import/csv', to: :import_csv_handler, controller: 'import'
+      post 'import/csv', to: :csv, controller: 'import'
     end
   end
 
