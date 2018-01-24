@@ -1,3 +1,5 @@
+require 'lib/utils/import_util'
+
 class Api::V1::ImportController < ApiController
   protect_from_forgery with: :null_session
 
