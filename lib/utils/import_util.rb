@@ -66,7 +66,7 @@ class Utils::ImportUtil
                 product = Spree::Product.create!(query)
             end
 
-            if row.image_url.present?
+            if row.respond_to? :image_url
                 import_image(row.image_url, product)
             end
 
