@@ -84,12 +84,12 @@ class Utils::ImportUtil
             csv = Roo::Spreadsheet.open(csv_file, csv_options: { quote_char: quote_chars.shift, col_sep: "\t" })
 
             csv.each_with_pagename do |name, sheet|
-                config.debug "Importing sheet: '" + name + "'..."
+                puts "Importing sheet: '" + name + "'..."
         
                 import_spreadsheet(sheet)
             end    
         rescue CSV::MalformedCSVError
-            config.debug "Import failed: Incorrect quote character, retrying with '" + quote_chars.first + "'..."
+            puts "Import failed: Incorrect quote character, retrying with '" + quote_chars.first + "'..."
 
             quote_chars.empty? ? raise : retry 
         end
