@@ -4,11 +4,11 @@ class Api::V1::ImportController < ApplicationController
   def csv
     logger.debug "#{params}"
 
-    if import_csv(params[:spreadsheet]) {
+    if import_csv(params[:spreadsheet])
       render plain: "OK"
-    } else {
+    else
       render plain: "Problem"
-    }
+    end
   end
 
   private
