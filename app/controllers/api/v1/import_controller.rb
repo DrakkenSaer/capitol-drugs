@@ -1,4 +1,4 @@
-class Api::V1::ImportController < ApplicationController
+class Api::V1::ImportController < ApiController
   protect_from_forgery with: :null_session
 
   def csv
