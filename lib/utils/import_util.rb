@@ -78,6 +78,8 @@ class Utils::ImportUtil
     end
 
     def import_csv(csv_file)
+        puts csv_file
+
         quote_chars = %w(" | ~ ^ & * ")
 
         begin
