@@ -4,7 +4,7 @@ class Api::V1::ImportController < ApiController
   def csv
     logger.debug "#{params}"
 
-    if import_csv(params[:spreadsheet])
+    if ImportUtil.import_csv(params[:spreadsheet])
       render plain: "OK"
     else
       render plain: "Problem"
