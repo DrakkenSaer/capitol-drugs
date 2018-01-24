@@ -1,8 +1,14 @@
 class Api::V1::ImportController < ApplicationController
+  protect_from_forgery with: :null_session
+
   def csv
     logger.debug "#{params}"
 
-    render plain: "OK"
+    if import_csv(params[:spreadsheet]) {
+      render plain: "OK"
+    } else {
+      render plain: "Problem"
+    }
   end
 
   private
